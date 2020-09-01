@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 # MSIS
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 ##MSIS
 ## madgodfr
@@ -9,3 +10,6 @@
 =======
 # hayurban7
 >>>>>>> dev-hayurban7
+=======
+# dsendek
+>>>>>>> dev-dsendek
