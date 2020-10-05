@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<!--
+		I360 Web Design
+		Project 3 Demo
+
+		CONCEPT: Responsive Web Design
+			Adjust design within each media query
+			Additional technique: CSS variables
+	-->
+
+	<head>
+		<meta charset="utf-8">
+		<title>Oconee County Fire Rescue</title>
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/styles.css">
+
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Merriweather:300%7CMontserrat:300,500" rel="stylesheet">
+
+		<!-- Font Awesome - For use in I360 -->
+		<script src="https://kit.fontawesome.com/3680edfbdb.js" crossorigin="anonymous"></script>
+	</head>
+
+<body>
+	<!-- For use in demo to see when media queries are breaking -->
+	<div id="rwd"></div>
+
+	<!-- Navigation -->
+	<nav>
+		<div class="container">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="members.html">Members</a></li>
+				<li><a href="certifications.html">Certifications</a></li>
+				<li><a href="printmem.html">Members List</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Header -->
+	<header>
+		<div class="container">
+			<div class="branding">
+				<h1>Oconee County Fire Rescue HOME</span></h1>
+				
+				
+			</div>
+		</div>
+	</header>
+
+	<!-- Highlights -->
+	<article class="highlights">
+		<h2 class="sr-only">Highlights</h2>
+		<div class="container">
+			<section>
+				<div class="icon"><i class="fab fa-pagelines fa-3x"></i></div>
+				<h2>Members</h2>
+				<p>
+                    <table>
+                        <tr>
+                            <td>Member A</td>
+                            <td><a href="#">Delete</a></td>
+                            <td><a href="#">Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Member B</td>
+                            <td><a href="#">Delete</a></td>
+                            <td><a href="#">Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Member C</td>
+                            <td><a href="#">Delete</a></td>
+                            <td><a href="#">Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Member D</td>
+                            <td><a href="#">Delete</a></td>
+                            <td><a href="#">Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Member E</td>
+                            <td><a href="#">Delete</a></td>
+                            <td><a href="#">Details</a></td>
+                        </tr>
+                    </table>
+                </p>
+			</section>
+			<section>
+				<div class="icon"><i class="fab fa-envira fa-3x"></i></div>
+				<h2>Add Members</h2>
+				<p>
+                    <form>
+                        <label for="First">First:</label> &nbsp;
+                        <input type="text" id="First" name="First">
+                        <br>
+                        <label for="Last">Last:</label> &nbsp;
+                        <input type="text" id="Last" name="Last">
+                        <br>
+                        <label for="Gender">Gender:</label> &nbsp;
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label><br>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label><br>
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Other</label>
+                        <br>
+                        <label for="Address">Address:</label> &nbsp;
+                        <input type="text" id="Address" name="Address">
+                        <br>
+                        <label for="City">City:</label> &nbsp;
+                        <input type="text" id="City" name="City">
+                        <br>
+                        <label for="State">State:</label> &nbsp;
+                        <input type="text" id="State" name="State">
+                        <br>
+                        <label for="Zip">Zip Code:</label> &nbsp;
+                        <input type="text" id="Zip" name="Zip">
+                        <br>
+                        <label for="Radio">Radio Number:</label> &nbsp;
+                        <input type="text" id="Radio" name="Radio">
+                        <br>
+                        <label for="Department">Department:</label> &nbsp;
+                        <input type="text" id="Department" name="Department">
+                        <br>
+                        <label for="Active">Active:</label> &nbsp;
+                        <input type="radio" id="yes" name="active" value="yes">
+                        <label for="yes">Yes</label><br>
+                        <input type="radio" id="no" name="active" value="no">
+                        <label for="no">NO</label><br>
+                        <br>
+                        <br>
+                        <button class="submit">Submit</button>
+                    </form>
+                </p>
+			</section>
+			<section>
+				<div class="icon"><i class="fas fa-coffee fa-3x"></i></div>
+				<h2>Expired Member Certification</h2>
+				<p>
+                        <div class="dropdown"> 
+                            <button onclick ="myFunction()" class="dropbtn">Filter by Certification
+                            </button>
+                            <div  id="myDropdown" class="dropdown-content">
+                              <a>CPR (American Heart)</a>
+                              <a>CPR (American Red Cross)</a>
+                              <a>Firefighter I (Athens Technical College)</a>
+                              <a>Firefighter I (Ivy Technical College)</a>
+                              <a>POST (Georgia POST Academt)</a>
+                            </div>
+                        </div>
+                </p>
+			</section>
+		</div>
+	</article>
+
+	
+
+
+
+	<!-- Footer -->
+	<footer>
+		<div class="video">
+			<section>
+				<h2 class="sr-only">Contact Information</h2>
+				<address>
+					<strong>Brown County Coffee</strong><br>
+					Nashville, Indiana 47448
+				</address>
+				<p>(812) 340-2505</p>
+				<p><a href="mailto:browncountycoffee@sbcglobal.net">browncountycoffee@sbcglobal.net</a></p>
+			</section>
+			<section>
+				<h2 class="sr-only">Social Media</h2>
+				<a href="https://www.facebook.com/Brown-County-Coffee-and-Bloomington-Coffee-Roasters-197546106943148/"><i class="fab fa-facebook fa-2x"></i></a>
+				<a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+				<a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+			</section>
+		</div>
+	</footer>
+</body>
+
+</html>

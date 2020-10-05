@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<!--
+		I360 Web Design
+		Project 3 Demo
+
+		CONCEPT: Responsive Web Design
+			Adjust design within each media query
+			Additional technique: CSS variables
+	-->
+
+	<head>
+		<meta charset="utf-8">
+		<title>Oconee County Fire Rescue</title>
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/styles.css">
+
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Merriweather:300%7CMontserrat:300,500" rel="stylesheet">
+
+		<!-- Font Awesome - For use in I360 -->
+		<script src="https://kit.fontawesome.com/3680edfbdb.js" crossorigin="anonymous"></script>
+	</head>
+
+<body>
+	<!-- For use in demo to see when media queries are breaking -->
+	<div id="rwd"></div>
+
+	<!-- Navigation -->
+	<nav>
+		<div class="container">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="members.html">Members</a></li>
+				<li><a href="certifications.html">Certifications</a></li>
+				<li><a href="printmem.html">Members List</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Header -->
+	<header>
+		<div class="container">
+			<div class="branding">
+				<h1>Oconee County Fire Rescue HOME</span></h1>
+				
+				
+			</div>
+		</div>
+	</header>
+
+	<!-- Highlights -->
+	<article class="highlights">
+		<h2 class="sr-only">Highlights</h2>
+		<div class="container">
+			<section>
+				<div class="icon"><i class="fab fa-pagelines fa-3x"></i></div>
+				<h2>Certifications</h2>
+				<p>
+                    <table>
+                        <tr>
+                            <td>Certification A</td>
+                            <td><a href="#">Delete</a></td>
+                            <td><a href="#">Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Certification B</td>
+                            <td><a href="#">Delete</a></td>
+                            <td><a href="#">Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Certification C</td>
+                            <td><a href="#">Delete</a></td>
+                            <td><a href="#">Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Certification D</td>
+                            <td><a href="#">Delete</a></td>
+                            <td><a href="#">Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Certification E</td>
+                            <td><a href="#">Delete</a></td>
+                            <td><a href="#">Details</a></td>
+                        </tr>
+                    </table>
+                </p>
+			</section>
+			
+			<section>
+				<div class="icon"><i class="fas fa-coffee fa-3x"></i></div>
+				<h2>Add Certification</h2>
+				<p>
+                    <form>
+                        <label for="Name">Certification Name:</label> &nbsp;
+                        <input type="text" id="Name" name="Name">
+                        <br>
+                        <label for="agency">Offering Agency:</label> &nbsp;
+                        <input type="text" id="agency" name="agency">
+                        <br>
+                        <label for="experiod">Expiration Period:</label> &nbsp;
+                        <input type="text" id="experiod" name="experiod">
+                        <br>
+                        <button class="submit">Submit</button>
+                    </form>
+                </p>
+			</section>
+		</div>
+	</article>
+
+
+	<!-- Footer -->
+	<footer>
+		<div class="video">
+			<section>
+				<h2 class="sr-only">Contact Information</h2>
+				<address>
+					<strong>Brown County Coffee</strong><br>
+					Nashville, Indiana 47448
+				</address>
+				<p>(812) 340-2505</p>
+				<p><a href="mailto:browncountycoffee@sbcglobal.net">browncountycoffee@sbcglobal.net</a></p>
+			</section>
+			<section>
+				<h2 class="sr-only">Social Media</h2>
+				<a href="https://www.facebook.com/Brown-County-Coffee-and-Bloomington-Coffee-Roasters-197546106943148/"><i class="fab fa-facebook fa-2x"></i></a>
+				<a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+				<a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+			</section>
+		</div>
+	</footer>
+</body>
+
+</html>
