@@ -10,6 +10,8 @@ CREATE TABLE Members
 
               Gender   VARCHAR(10)            NOT NULL,
 
+              MemberStreet     VARCHAR(20)    NOT NULL,
+
               MemberCity        VARCHAR(20)    NOT NULL,
 
               MemberState       CHAR(2)         NOT NULL,
