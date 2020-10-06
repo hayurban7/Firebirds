@@ -6,7 +6,7 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT * FROM PatientVisit pv, Patient p WHERE p.patientGuid = pv.patientGuid';
+$sql = 'SELECT * FROM ';
 $vars = [];
 
 // if (isset($_GET['guid'])) {
@@ -21,7 +21,7 @@ $stmt->execute($vars);
 $patients = $stmt->fetchAll();
 
 // Step 3: Convert to JSON
-$json = json_encode($patients, JSON_PRETTY_PRINT);
+$json = json_encode($members, JSON_PRETTY_PRINT);
 
 // Step 4: Output
 header('Content-Type: application/json');
