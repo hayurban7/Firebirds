@@ -1,4 +1,4 @@
-CREATE DATABASE oconee-fire-db;
+CREATE DATABASE oconeefiredb;
 
 CREATE TABLE Members
 
