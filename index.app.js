@@ -1,5 +1,5 @@
 var app = new Vue({
-    el: '#triagePage',
+    el: '#firefighter',
     data: {
       ptList: [],
       visitList: [],
