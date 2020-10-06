@@ -35,10 +35,10 @@
 	<nav>
 		<div class="container">
 			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="members.html">Members</a></li>
-				<li><a href="certifications.html">Certifications</a></li>
-				<li><a href="printmem.html">Members List</a></li>
+				<li><a href="/app/public/index.html">Home</a></li>
+				<li><a href="/app/public/members.html">Members</a></li>
+				<li><a href="/app/public/certifications.html">Certifications</a></li>
+				<li><a href="/app/public/printmem.html">Members List</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -66,13 +66,17 @@
                             <a v-bind:href="userImgLarge">
                                 <img v-bind:src="userImgThumb">
                             </a>
-                            <h2>Name: {{userName}}</h2>
-                            <h3>Gender: {{userLocation}}</h3>
-                            <h3>Address: {{formatDate(userDate)}}</h3>
-                            <h3>Phone: {{userAge}}</h3>
-                            <h3>Station: <a v-bind:href="'mailto:'+userEmail">{{userEmail}}</h3>
-                            <h3>Radio: {{userAge}}</h3>
-                            <h3>Active: {{userAge}}</h3>
+							<h2>Name: {{First_Name}} {{Last_Name}}</h2>
+							<h3>Title: {{Title}}</h3>
+                            <h3>Gender: {{Gender}}</h3>
+                            <h3>Address: {{MemberStreet}}
+								<br> {{MemberCity}}
+								<br> {{MemberState}} {{MemberZipCode}}
+							</h3>
+                            <h3>Phone: {{MemberPhone}}</h3>
+                            <h3>Station: {{Station}}</h3>
+                            <h3>Radio: {{Radio}}</h3>
+                            <h3>Active: {{IsActive}}</h3>
                             <button type="submit">Update</button> 
                             </div>
             
