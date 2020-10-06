@@ -1,4 +1,4 @@
-/* apply a natural box layout model to all elements */
+
 html {
     box-sizing: border-box;
   }
@@ -8,24 +8,15 @@ html {
   
   :root {
     --main-bg-color: #e6cea7;
-    /* Add the rest of the colors */
+    
   
   }
   
   /* CUSTOM CSS PROPERTIES
   https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
   background-color: var(--main-bg-color); */
-  
-  /* COLORS:
-  brown - #7c2e29
-  red- #d42a3a
-  bright red - #ed344a
-  teal - #3d957d
-  light blue - #a3e5f0
-  */
-  
-  /* Photos from:
-  https://unsplash.com/search/photos/coffee */
+
+
   
   /* General */
   body, html {
@@ -42,9 +33,7 @@ html {
     padding: 2.0em 0.5em;
   }
   
-  img {
-      width: 100%;
-  }
+ 
   /* Dropdown*/
   /* The dropdown container */
   .dropdown {
@@ -126,7 +115,7 @@ html {
     font-family: 'Merriweather', serif;
   }
   
-  p, td, li, small, figcaption, address, label {
+  p, td, li, label {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
   }
@@ -145,10 +134,6 @@ html {
       margin-top: 0.5em;
   }
   
-  .tagline {
-      margin: 0.5em 0 2.0em;
-      font-size: 14px;
-  }
   
   /* Links */
   a:link, a:visited {
@@ -201,10 +186,7 @@ html {
   nav {
     background: linear-gradient(to top right, rgba(218, 206, 190, 0.5), rgba(255, 255, 255, 0)), url('../images/vintage-concrete/vintage-concrete.png') center center;
   }
-  
-  .logo img {
-    width: 175px;
-  }
+
   
   nav .container {
     padding: 1.0em 0.5em;
@@ -239,7 +221,6 @@ html {
   
   /* Header */
   header {
-    background: url('../images/brown-county-coffee-header.jpg') no-repeat left center fixed;
     background-size: cover;
   }
   
@@ -252,7 +233,6 @@ html {
     width: 100%;
     color: #ffffff;
     text-align: center;
-    background: url('../images/wood_1/wood_1.png');
     padding: 0.5em 0 1.5em;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -288,46 +268,57 @@ html {
       color: #3d957d;
   }
   
-  /* Gallery */
-  .gallery {
-    background: url('../images/wood_1/wood_1.png') center center;
-  }
+  /* Tables */
+  table{
+    margin: 4em;
+    align-content: center;
+    border: 1px solid black;
+}
+
+th, td{
+    align-content: center;
+    border: 1px dashed #d42a3a;
+    padding: .5cm;
+}
+
+form{
+    margin-left: 4em;
+}
+th[role=columnheader]:not(.no-sort) {
+	cursor: pointer;
+}
+
+th[role=columnheader]:not(.no-sort):after {
+	content: '';
+	float: right;
+	margin-top: 7px;
+	border-width: 0 4px 4px;
+	border-style: solid;
+	border-color: #404040 transparent;
+	visibility: hidden;
+	opacity: 0;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+th[aria-sort=ascending]:not(.no-sort):after {
+	border-bottom: none;
+	border-width: 4px 4px 0;
+}
+
+th[aria-sort]:not(.no-sort):after {
+	visibility: visible;
+	opacity: 0.4;
+}
+
+th[role=columnheader]:not(.no-sort):hover:after {
+	visibility: visible;
+	opacity: 1;
+} 
   
-  .gallery h2, .gallery .subtitle {
-      color: #ffffff;
-  }
-  
-  .gallery section {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-  }
-  
-  .gallery figure {
-    margin: 0 0.5em 1.0em;
-    padding: 0;
-    border-radius: 5px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(255, 255, 255, 1));
-    flex: 1 0 250px;
-  }
-  
-  .gallery img {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-  }
-  
-  .gallery img:hover {
-    opacity: 0.9;
-  }
-  
-  figcaption {
-    margin: 0.5em;
-    text-align: left;
-    padding-left: 0.5em;
-    font-size: 14px;
-  }
-  
-  /* Video */
+  /* Footer */
   .embed-container { 
     position: relative; 
     padding-bottom: 56.25%; 
@@ -345,15 +336,14 @@ html {
     border: 0; 
   }
   
-  .video {
+  .footer {
       background-image: radial-gradient(circle at center, #3d957d 0%, #2a6857 100%);
       color: #ffffff;
+      text-align: center;
   }
   
   /* Form */
-  .email-list {
-      background: url('../images/vintage-concrete/vintage-concrete.png') center center;
-  }
+
   
   form { display: static; }
   
@@ -388,48 +378,16 @@ html {
       margin: 0 10px 0 0;
   }
   
-  /* Footer */
-  footer {
-      background: url('../images/brown-county-coffee-header.jpg') no-repeat left center fixed;
-      background-size: cover;
-      color: #ffffff;
-  }
-  
-  footer .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  footer address {
-    font-style: normal;
-    line-height: 1.3em;
-  }
-  
-  footer section {
-    margin: 0 auto;
-  }
-  
-  footer a {
-    display: inline-block;
-    margin: 0 16px 0.5em;
-  }
+
+
   
   /* RWD Test */
-  #rwd {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      z-index: 100;
-      height: 20px;
-      background-color: red;
-  }
+
   
   /* MEDIA QUERIES */
   /* Small devices (landscape phones, 576px and up) */
   @media (min-width: 576px) {
-      #rwd { background-color: orange; }
+      
       .branding {
         width: 75%;
       }
@@ -464,7 +422,7 @@ html {
   
   /* Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
-      #rwd { background-color: green; }
+      
       /* NAV */
       .logo img { width: 225px; }
       nav ul { max-width: 600px; margin: 0 auto; }
@@ -484,7 +442,7 @@ html {
   
   /* Large devices (desktops, 992px and up) */
   @media (min-width: 992px) {
-      #rwd { background-color: blue; }
+     
       /* HEADER */
       header .container { padding: 5.0em 0.5em; }
       h1 { font-size: 42px; }
@@ -493,7 +451,7 @@ html {
   
   /* Extra large devices (large desktops, 1200px and up) */
   @media (min-width: 1200px) {
-      #rwd { background-color: purple; }
+      
       h1 {
           font-size: 48px;
       }
