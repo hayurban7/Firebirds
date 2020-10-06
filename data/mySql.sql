@@ -1,3 +1,5 @@
+CREATE DATABASE oconee-fire-db;
+
 CREATE TABLE Members
 
              (Member_ID INT NOT NULL,
