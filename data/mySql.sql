@@ -1,5 +1,7 @@
 CREATE DATABASE oconeefiredb;
 
+USE oconeefiredb;
+
 CREATE TABLE Members
 
              (Member_ID INT NOT NULL,
@@ -41,9 +43,9 @@ CREATE TABLE Certifications
 
              (Certification_ID        INT   NOT NULL,
 
-	      Certificate_Name    VARCHAR(30)    NOT NULL,  
+	      Certificate_Name    VARCHAR(30)    NOT NULL,
 
-          Exp_period INT NOT NULL,            
+          Exp_period INT NOT NULL,
 
 CONSTRAINT CERTIFICATIONS_PK PRIMARY KEY (Certification_ID));
 
@@ -57,7 +59,7 @@ CREATE TABLE Certification_Details
 
               Certification_ID            INT    NOT NULL,
 
-              Exp_Date      DATE        NOT NULL, 
+              Exp_Date      DATE        NOT NULL,
 
 CONSTRAINT CERTIFICATION_DETAILS_PK PRIMARY KEY (Member_Cert_ID),
 
