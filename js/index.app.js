@@ -3,21 +3,34 @@ var app = new Vue({
     data: {
       memberList: [],//Member - Madison 
       certList: [], //Certifications - Hayley
-      activePt: null,
+      activeMember: null,
       newMemberForm: {
         xxxx: null,
         yyyyy: ''
       } //Member - Madison 
+      newCertForm: {
+        xxxx: null,
+        yyyyy: ''
+      }//Certifications - Hayley
     },
     computed: {
     },
     methods: {
-      newPtData() {
+      newMemberData() {
         return {
-          firstName: "",
-          lastName: "",
-          dob: "",
-          sexAtBirth: ""
+          Member_ID:"", 
+          First_Name:"", 
+          Last_Name:"", 
+          Title:"", 
+          Gender:"", 
+          MemberStreet:"", 
+          MemberCity:"", 
+          MemberState:"", 
+          MemberZipCode:"", 
+          MemberPhone:"", 
+          Radio:"", 
+          Station:"", 
+          IsActive:""
         }
       },
       handleMemberForm( evt ) {//Member - Madison - post new member form 
@@ -50,6 +63,13 @@ var app = new Vue({
         this.memberForm.pt = this.activeMember;
         console.log(this.MemberForm);
   
+      },
+      newCertData() {
+        return{
+          Certificate_ID:"",
+          Certifcate_Name:"",
+          Exp_period:""
+        }
       },
       handleCertificationForm( evt ) {//Certification - Hayley - post new certification form 
           // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
@@ -98,7 +118,7 @@ var app = new Vue({
   
         console.log(json)}
       );
-      this.newMemberForm = this.newPtData();
+      this.newMemberForm = this.newMemberData();
     }
     
   })
