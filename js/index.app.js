@@ -7,7 +7,7 @@ var app = new Vue({
       newMemberForm: {
         xxxx: null,
         yyyyy: ''
-      } //Member - Madison 
+      }, //Member - Madison 
       newCertForm: {
         xxxx: null,
         yyyyy: ''
@@ -55,12 +55,12 @@ var app = new Vue({
         console.log("Creating (POSTing)...!");
         console.log(this.newMemberForm);
   
-        this.newMemberForm = this.newPtData();
+        this.newMemberForm = this.newMemberData();
       },
       handleMemberForm( evt ) {
         console.log("Form submitted!");
   
-        this.memberForm.pt = this.activeMember;
+        this.memberForm.member = this.activeMember; // CHECK THIS 
         console.log(this.MemberForm);
   
       },
@@ -68,7 +68,7 @@ var app = new Vue({
         return{
           Certificate_ID:"",
           Certifcate_Name:"",
-          Exp_period:""
+          Exp_period:"",
         }
       },
       handleCertificationForm( evt ) {//Certification - Hayley - post new certification form 
@@ -98,7 +98,7 @@ var app = new Vue({
         handleCertificationForm( evt ) {
           console.log("Form submitted!");
     
-          this.CertificationForm.pt = this.activePt; //need active cert?
+          this.CertificationForm.member = this.activeMember; //CHECK THIS
           console.log(this.CertificationForm);
     
         }
