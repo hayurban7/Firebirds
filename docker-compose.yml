@@ -1,5 +1,6 @@
 version: "3"
-  firebirds:
+services:
+  phptriage:
     build: .
     ports:
       - "8000:80"
