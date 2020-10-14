@@ -1,14 +1,14 @@
 var app = new Vue({
     el: '#firefighter',
     data: {
-      ptList: [],
+      memberList: [],//Member - Madison 
       visitList: [],
       activePt: null,
       triageForm: {
         priority: null,
         symptoms: ''
       },
-      newPtForm: {}
+      newMemberForm: {} //Member - Madison 
     },
     computed: {
       activePtName() {
@@ -24,14 +24,14 @@ var app = new Vue({
           sexAtBirth: ""
         }
       },
-      handleNewPtForm( evt ) {
+      handleMemberForm( evt ) {//Member - Madison - post new member form 
         // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
   
         // TODO: Validate the data!
   
-        fetch('api/records/post.php', {
+        fetch('api/members/post.php', {
           method:'POST',
-          body: JSON.stringify(this.newPtForm),
+          body: JSON.stringify(this.newMemberForm),
           headers: {
             "Content-Type": "application/json; charset=utf-8"
           }
@@ -40,13 +40,13 @@ var app = new Vue({
         .then( json => {
           console.log("Returned from post:", json);
           // TODO: test a result was returned!
-          this.ptList.push(json[0]);
+          this.memberList.push(json[0]);
         });
   
         console.log("Creating (POSTing)...!");
-        console.log(this.newPtForm);
+        console.log(this.newMemberForm);
   
-        this.newPtForm = this.newPtData();
+        this.newMemberForm = this.newPtData();
       },
       handleTriageForm( evt ) {
         console.log("Form submitted!");
@@ -57,10 +57,10 @@ var app = new Vue({
       }
     },
     created() {
-      fetch("api/records/")
+      fetch("api/members/")//Member - Madison 
       .then( response => response.json() )
       .then( json => {
-        this.ptList = json;
+        this.memberList = json;
   
         console.log(json)}
       );
@@ -71,7 +71,7 @@ var app = new Vue({
   
         console.log(json)}
       );
-      this.newPtForm = this.newPtData();
+      this.newMemberForm = this.newPtData();
     }
   })
   
