@@ -60,11 +60,12 @@
 		<div class="container">
 			<section>
 				<div class="icon"><i class="fab fa-pagelines fa-3x"></i></div>
-				<h2>Members</h2>
+                <h2>Members</h2>
+                <div id="memberProfile">
 				<p>
                     <table>
                         <tr>
-                            <td>{{First_Name}} {{Last_Name}}</td>
+                            <td>{{memberFirst}} {{memberLast}}</td>
                             <td><a href="#">Delete</a></td>
                             <td><a href="memdetails.html">Details</a></td>
                         </tr>
@@ -90,6 +91,7 @@
                         </tr>
                     </table>
                 </p>
+            </div>
 			</section>
 			<section>
 				<div class="icon"><i class="fab fa-envira fa-3x"></i></div>
@@ -177,7 +179,9 @@
 				
             </section>
 		</div>
-	</footer>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/member.app.js"></script>
 </body>
 
 </html>
