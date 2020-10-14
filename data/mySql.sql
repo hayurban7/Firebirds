@@ -30,6 +30,8 @@ CREATE TABLE Members
 
               IsActive BOOLEAN NOT NULL,
 
+              Secondary_Phone  VARCHAR(10)
+
 
 CONSTRAINT MEMBERS_PK PRIMARY KEY (Member_ID));
 
