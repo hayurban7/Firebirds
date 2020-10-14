@@ -4,16 +4,12 @@ var app = new Vue({
       memberList: [],//Member - Madison 
       certList: [], //Certifications - Hayley
       activePt: null,
-      triageForm: {
-        priority: null,
-        symptoms: ''
-      },
-      newMemberForm: {} //Member - Madison 
+      newMemberForm: {
+        xxxx: null,
+        yyyyy: ''
+      } //Member - Madison 
     },
     computed: {
-      activePtName() {
-        return this.activePt ? this.activePt.lastName + ', ' + this.activePt.firstName : ''
-      }
     },
     methods: {
       newPtData() {
@@ -48,22 +44,14 @@ var app = new Vue({
   
         this.newMemberForm = this.newPtData();
       },
-      handleTriageForm( evt ) {
+      handleMemberForm( evt ) {
         console.log("Form submitted!");
   
-        this.triageForm.pt = this.activePt;
-        console.log(this.triageForm);
+        this.memberForm.pt = this.activeMember;
+        console.log(this.MemberForm);
   
-      }
-      methods: {
-        newCertData() {
-          return {
-            Certification_ID: "",
-            Certification_Name: "",
-            Exp_period: ""
-          }
-        },
-        handleCertificationForm( evt ) {//Certification - Hayley - post new certification form 
+      },
+      handleCertificationForm( evt ) {//Certification - Hayley - post new certification form 
           // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
     
           // TODO: Validate the data!
@@ -87,11 +75,11 @@ var app = new Vue({
     
           this.newCertForm = this.newCertData();
         },
-        handleTriageForm( evt ) {
+        handleCertificationForm( evt ) {
           console.log("Form submitted!");
     
-          this.triageForm.pt = this.activePt;
-          console.log(this.triageForm);
+          this.CertificationForm.pt = this.activePt; //need active cert?
+          console.log(this.CertificationForm);
     
         }
     },
