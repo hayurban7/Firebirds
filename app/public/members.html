@@ -57,40 +57,22 @@
 	<!-- Highlights -->
 	<article class="highlights">
 		<h2 class="sr-only">Highlights</h2>
-		<div class="container">
+		<div class="container" id="memberProfile" >
 			<section>
 				<div class="icon"><i class="fab fa-pagelines fa-3x"></i></div>
                 <h2>Members</h2>
-                <div id="memberProfile">
-				<p>
-                    <table>
-                        <tr>
-                            <td>{{memberFirst}} {{memberLast}}</td>
-                            <td><a href="#">Delete</a></td>
-                            <td><a href="memdetails.html">Details</a></td>
-                        </tr>
-                        <tr>
-                            <td>{{First_Name}} {{Last_Name}}</td>
-                            <td><a href="#">Delete</a></td>
-                            <td><a href="memdetails.html">Details</a></td>
-                        </tr>
-                        <tr>
-                            <td>{{First_Name}} {{Last_Name}}</td>
-                            <td><a href="#">Delete</a></td>
-                            <td><a href="memdetails.html">Details</a></td>
-                        </tr>
-                        <tr>
-                            <td>{{First_Name}} {{Last_Name}}</td>
-                            <td><a href="#">Delete</a></td>
-                            <td><a href="memdetails.html">Details</a></td>
-                        </tr>
-                        <tr>
-                            <td>{{First_Name}} {{Last_Name}}</td>
-                            <td><a href="#">Delete</a></td>
-                            <td><a href="memdetails.html">Details</a></td>
-                        </tr>
-                    </table>
-                </p>
+                <div v-for="member in memberList">
+            
+                    <p>
+                        <table>
+                            <tr>
+                                <td>{{member.First_Name}} {{member.Last_Name}}</td>
+                                <td><a href="#">Delete</a></td>
+                                <td><a href="memdetails.html">Details</a></td>
+                            </tr>
+                        </table>
+                    </p>
+                </div>
             </div>
 			</section>
 			<section>
@@ -180,8 +162,9 @@
             </section>
 		</div>
     </footer>
+    <script src="js/index.app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/member.app.js"></script>
+ 
 </body>
 
 </html>

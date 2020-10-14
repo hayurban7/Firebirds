@@ -104,14 +104,14 @@ var app = new Vue({
         }
     },
     created() {
-      fetch("api/members/")//Member - Madison 
+      fetch("api/members/index.php")//Member - Madison 
       .then( response => response.json() )
       .then( json => {
         this.memberList = json;
   
         console.log(json)}
       );
-      fetch("api/certifications/")
+      fetch("api/certifications/index.php")
       .then( response => response.json() )
       .then( json => {
         this.certList = json;
