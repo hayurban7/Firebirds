@@ -66,7 +66,7 @@ var app = new Vue({
       },
       newCertData() {
         return{
-          Certificate_ID:"",
+          Certification_ID:"",
           Certifcate_Name:"",
           Exp_period:"",
         }
