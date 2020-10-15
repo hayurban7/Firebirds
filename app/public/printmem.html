@@ -57,42 +57,28 @@
 	<!-- Highlights -->
 	<article class="highlights">
 		<h2>Printable List (Sortable Tables)</h2>
-		<div class="container">
+		<div class="container" id="firefighter">
 			<section>			
-                <table id="taskTable">
+				<div v-for="member in memberList">
+                <table>
                     <tr>
 					<thead>
                         <th>Member</th>
                         <th>Station</th>
                         <th>Radio Number</th>
-						<th>Phone Number </th>
+						<th>Work Phone</th>
+						<th>Cell Phone</th>
 					</thead>
                     </tr>
                     <tr>
-                        <td>{{First_Name}} {{Last_Name}}</td>
-                        <td>{{Station}}</td>
-                        <td>{{Radio}}</td>
-                        <td>{{MemberPhone}}</td>
-                    </tr>
-                    <tr>
-                        <td>{{First_Name}} {{Last_Name}}</td>
-                        <td>{{Station}}</td>
-                        <td>{{Radio}}</td>
-                        <td>{{MemberPhone}}</td>
-                    </tr>
-                    <tr>
-                        <td>{{First_Name}} {{Last_Name}}</td>
-                        <td>{{Station}}</td>
-                        <td>{{Radio}}</td>
-                        <td>{{MemberPhone}}</td>
-                    </tr>
-                    <tr>
-                        <td>{{First_Name}} {{Last_Name}}</td>
-                        <td>{{Station}}</td>
-                        <td>{{Radio}}</td>
-                        <td>{{MemberPhone}}</td>
+                        <td>{{member.First_Name}} {{member.Last_Name}}</td>
+                        <td>{{member.Station}}</td>
+                        <td>{{member.Radio}}</td>
+						<td>{{member.MemberPhone}}</td>
+						<td>{{member.Secondary_Phone}}</td>
                     </tr>
 				</table>
+			</div>
 			</section>
 			
 		</div>
@@ -123,7 +109,11 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-	
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.0/moment.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/index.app.js"></script>
 </body>
 
 </html>
