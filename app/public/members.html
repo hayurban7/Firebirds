@@ -68,7 +68,7 @@
                         <table>
                             <tr>
                                 <td>{{member.First_Name}} {{member.Last_Name}}</td>
-                                <td><a href="#">Delete</a></td>
+                                <td><button @click='deleteTableRow({{member.Member_ID}})' >Delete</button></td>
                                 <td><a href="memdetails.html">Details</a></td>
                             </tr>
                         </table>
@@ -126,7 +126,7 @@
                         <label for="no">NO</label><br>
                         <br>
                         <br>
-                        <button class="submit">Submit</button>
+                        <button @click='addTableRow()' class="submit">Submit</button>
                     </form>
                 </p>
 			</section>

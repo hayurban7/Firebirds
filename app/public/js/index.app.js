@@ -11,7 +11,9 @@ var app = new Vue({
       newCertForm: {
         xxxx: null,
         yyyyy: ''
-      }//Certifications - Hayley
+      },//Certifications - Hayley
+      tableRows:['Table Row 1', 'Table Row 2'],
+      counter:2
     },
     computed: {
     },
@@ -101,6 +103,15 @@ var app = new Vue({
           this.CertificationForm.member = this.activeMember; //CHECK THIS
           console.log(this.CertificationForm);
     
+        },
+        addTableRow: function () { 
+          this.counter++;
+          this.tableRows.push("Table Row "+this.counter);
+          
+        },
+        deleteTableRow: function (idx) { 
+          this.counter--;
+          this.tableRows.splice(idx, 1);      
         }
     },
     created() {
@@ -119,6 +130,10 @@ var app = new Vue({
         console.log(json)}
       );
       this.newMemberForm = this.newMemberData();
+
+
+      
+    
     }
     
   })
