@@ -104,6 +104,7 @@ var app = new Vue({
           console.log(this.CertificationForm);
     
         },
+        // add and delete rows functions from https://www.tutorialsplane.com/vue-js-delete-table-row/
         addTableRow: function () { 
           this.counter++;
           this.tableRows.push("Table Row "+this.counter);
