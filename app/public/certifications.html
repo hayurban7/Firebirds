@@ -57,40 +57,27 @@
 	<!-- Highlights -->
 	<article class="highlights">
 		<h2 class="sr-only">Highlights</h2>
-		<div class="container">
+		<div class="container" id="firefighter">
 			<section>
 				<div class="icon"><i class="fab fa-pagelines fa-3x"></i></div>
 				<h2>Certifications</h2>
-				<p>
-                    <table>
-                        <tr>
-                            <td>{{Certificate_Name}}</td>
-                            <td><a href="#">Delete</a></td>
-                            <td><a href="certdetails.html">Details</a></td>
-                        </tr>
-                        <tr>
-                            <td>{{Certificate_Name}}</td>
-                            <td><a href="#">Delete</a></td>
-                            <td><a href="#">Details</a></td>
-                        </tr>
-                        <tr>
-                            <td>{{Certificate_Name}}</td>
-                            <td><a href="#">Delete</a></td>
-                            <td><a href="#">Details</a></td>
-                        </tr>
-                        <tr>
-                            <td>{{Certificate_Name}}</td>
-                            <td><a href="#">Delete</a></td>
-                            <td><a href="#">Details</a></td>
-                        </tr>
-                        <tr>
-                            <td>{{Certificate_Name}}</td>
-                            <td><a href="#">Delete</a></td>
-                            <td><a href="#">Details</a></td>
-                        </tr>
-                    </table>
-                </p>
-			</section>
+					<section>
+						<div class="icon"><i class="fab fa-pagelines fa-3x"></i></div>
+		                <h2>Members</h2>
+		                <div v-for="cert in certList">
+
+		                    <p>
+		                        <table>
+		                            <tr>
+		                                <td>{{cert.Certificate_Name}}</td>
+		                                <td><a href="#">Delete</a></td>
+		                                <td><a href="certdetails.html">Details</a></td>
+		                            </tr>
+		                        </table>
+		                    </p>
+		                </div>
+		            </div>
+					</section>
 
 			<section>
 				<div class="icon"><i class="fas fa-coffee fa-3x"></i></div>
@@ -130,12 +117,14 @@
             </section>
 		</div>
 	</footer>
-		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/index.app.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.0/moment.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="js/index.app.js"></script>
 </body>
 
 </html>
