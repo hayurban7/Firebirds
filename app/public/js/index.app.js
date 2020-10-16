@@ -4,23 +4,19 @@ var app = new Vue({
       memberList: [],//Member - Madison 
       certList: [], //Certifications - Hayley
       activeMember: null,
-      newMemberForm: {
-        xxxx: null,
-        yyyyy: ''
-      }, //Member - Madison 
-      newCertForm: {
-        xxxx: null,
-        yyyyy: ''
-      },//Certifications - Hayley
+      newMemberForm: {}, //Member - Madison 
+      newCertForm: {},//Certifications - Hayley
       tableRows:['Table Row 1', 'Table Row 2'],
       counter:2
     },
     computed: {
+      activeMember(){
+        //finish
+      }
     },
     methods: {
       newMemberData() {
         return {
-          Member_ID:"", 
           First_Name:"", 
           Last_Name:"", 
           Title:"", 
@@ -29,13 +25,21 @@ var app = new Vue({
           MemberCity:"", 
           MemberState:"", 
           MemberZipCode:"", 
-          MemberPhone:"", 
+          MemberPhone:"",
+          Secondary_Phone:"",
           Radio:"", 
           Station:"", 
           IsActive:""
         }
       },
-      handleMemberForm( evt ) {//Member - Madison - post new member form 
+      newCertData(){
+        return{
+          Certification_ID:"",
+          Certifcate_Name:"",
+          Exp_period:""
+        }
+      },
+      handleNewMemberForm( evt ) {//Member - Madison - post new member form 
         // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
   
         // TODO: Validate the data!
@@ -52,26 +56,11 @@ var app = new Vue({
           console.log("Returned from post:", json);
           // TODO: test a result was returned!
           this.memberList.push(json[0]);
+          this.newMemberForm = this.newMemberData();
         });
   
         console.log("Creating (POSTing)...!");
         console.log(this.newMemberForm);
-  
-        this.newMemberForm = this.newMemberData();
-      },
-      handleMemberForm( evt ) {
-        console.log("Form submitted!");
-  
-        this.memberForm.member = this.activeMember; // CHECK THIS 
-        console.log(this.MemberForm);
-  
-      },
-      newCertData() {
-        return{
-          Certification_ID:"",
-          Certifcate_Name:"",
-          Exp_period:"",
-        }
       },
       handleCertificationForm( evt ) {//Certification - Hayley - post new certification form 
           // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
@@ -90,14 +79,15 @@ var app = new Vue({
             console.log("Returned from post:", json);
             // TODO: test a result was returned!
             this.certList.push(json[0]);
+            this.newCertForm = this.newCertData();
           });
     
           console.log("Creating (POSTing)...!");
           console.log(this.newCertificationForm);
     
-          this.newCertForm = this.newCertData();
+          
         },
-        handleCertificationForm( evt ) {
+        handleCertificationForm( evt ) { //idk if we need this
           console.log("Form submitted!");
     
           this.CertificationForm.member = this.activeMember; //CHECK THIS
@@ -130,7 +120,7 @@ var app = new Vue({
   
         console.log(json)}
       );
-      this.newMemberForm = this.newMemberData();
+
 
 
       

@@ -77,56 +77,70 @@
             </div>
 			</section>
 			<section>
-				<div class="icon"><i class="fab fa-envira fa-3x"></i></div>
+				<!-- <div class="icon"><i class="fab fa-envira fa-3x"></i></div> -->
 				<h2>Add Members</h2>
 				<p>
-                    <form>
-                        <label for="First">First:</label> &nbsp;
-                        <input type="text" id="First" name="First">
-                        <br>
-                        <label for="Last">Last:</label> &nbsp;
-                        <input type="text" id="Last" name="Last">
-                        <br>
-                        <label for="Gender">Gender:</label> &nbsp;
-                        <input type="radio" id="male" name="gender" value="male">
-                        <label for="male">Male</label><br>
-                        <input type="radio" id="female" name="gender" value="female">
-                        <label for="female">Female</label><br>
-                        <input type="radio" id="other" name="gender" value="other">
-                        <label for="other">Other</label>
-                        <br>
-                        <label for="Address">Address:</label> &nbsp;
-                        <input type="text" id="Address" name="Address">
-                        <br>
-                        <label for="City">City:</label> &nbsp;
-                        <input type="text" id="City" name="City">
-                        <br>
-                        <label for="State">State:</label> &nbsp;
-                        <input type="text" id="State" name="State">
-                        <br>
-                        <label for="Zip">Zip Code:</label> &nbsp;
-                        <input type="text" id="Zip" name="Zip">
-                        <br>
-                        <label for="Phone1">Cell Phone:</label> &nbsp;
-                        <input type="text" id="Phone1" name="Phone1">
-                        <br>
-                        <label for="Phone2">Work Phone:</label> &nbsp;
-                        <input type="text" id="Phone2" name="Phone2">
-                        <br>
-                        <label for="Radio">Radio Number:</label> &nbsp;
-                        <input type="text" id="Radio" name="Radio">
-                        <br>
-                        <label for="Department">Department:</label> &nbsp;
-                        <input type="text" id="Department" name="Department">
-                        <br>
-                        <label for="Active">Active:</label> &nbsp;
-                        <input type="radio" id="yes" name="active" value="yes">
-                        <label for="yes">Yes</label><br>
-                        <input type="radio" id="no" name="active" value="no">
-                        <label for="no">NO</label><br>
-                        <br>
-                        <br>
-                        <button @click='addTableRow()' class="submit">Submit</button>
+                    <form method="post" v-on:submit.prevent="handleNewMemberForm">
+                        <div class="form-group">
+                            <label for="First">First:</label> &nbsp;
+                            <input type="text" id="First" v-model="NewMemberForm.First_Name">
+                        </div>>
+                        <div class="form-group">
+                            <label for="Last">Last:</label> &nbsp;
+                            <input type="text" id="Last" v-model="NewMemberForm.Last_Name">
+                        </div>>
+                        <div class="form-group">
+                            <label for="Title">Title:</label> &nbsp;
+                            <input type="text" id="Title" v-model="NewMemberForm.Title">
+                        </div>
+                        <div class="form-group">
+                            <label for="Gender">Gender:</label> &nbsp; 
+                            <select class="form-control" v-model="NewMemberForm.Gender" id="Gender">
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                            <option value="O">Other/Unknown</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="Address">Address:</label> &nbsp;
+                            <input type="text" id="Address" v-model="NewMemberForm.MemberStreet">
+                        </div>
+                        <div class="form-group">
+                            <label for="City">City:</label> &nbsp;
+                            <input type="text" id="City"v-model="NewMemberForm.MemberCity">
+                        </div>
+                        <div class="form-group">
+                            <label for="State">State:</label> &nbsp;
+                            <input type="text" id="State" v-model="NewMemberForm.MemberState">
+                        </div>
+                        <div class="form-group">
+                            <label for="Zip">Zip Code:</label> &nbsp;
+                            <input type="text" id="Zip" v-model="NewMemberForm.MemberZipCode">
+                        </div>
+                        <div class="form-group">
+                            <label for="Phone1">Cell Phone:</label> &nbsp;
+                            <input type="text" id="Phone1" v-model="NewMemberForm.MemberPhone">
+                        </div>
+                        <div class="form-group">
+                            <label for="Phone2">Work Phone:</label> &nbsp;
+                            <input type="text" id="Phone2" v-model="NewMemberForm.Secondary_Phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="Radio">Radio Number:</label> &nbsp;
+                            <input type="text" id="Radio" v-model="NewMemberForm.Radio">
+                        </div>
+                        <div class="form-group">
+                            <label for="Department">Station:</label> &nbsp;
+                            <input type="text" id="Department" v-model="NewMemberForm.Station">
+                        </div>
+                        <div class="form-group">
+                            <label for="Active">Active:</label> &nbsp; IsActive
+                            <select class="form-control" v-model="NewMemberForm.IsActive" id="IsActive">
+                                <option value="Yes">Yes</option>
+                                <option value="NO">No</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Create</button>
                     </form>
                 </p>
 			</section>

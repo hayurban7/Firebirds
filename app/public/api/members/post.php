@@ -1,7 +1,7 @@
 <?php
 
 require 'common.php';
-
+// https://stackoverflow.com/questions/22446350/how-to-auto-increment-a-value-in-php 
 // Step 0: Validate the incoming data
 // This code doesn't do that, but should ...
 // For example, if the date is empty or bad, this insert fails.
@@ -12,12 +12,11 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'INSERT INTO Members (Member_ID, First_Name, Last_Name, Title, Gender, MemberStreet, MemberCity, MemberState, MemberZipCode, MemberPhone, Radio, Station, IsActive)
+  'INSERT INTO Members (Member_ID, First_Name, Last_Name, Title, Gender, MemberStreet, MemberCity, MemberState, MemberZipCode, MemberPhone, Radio, Station, IsActive, Secondary_Phone)
   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
 );
 // might not end up needing all fields (this lists all from member table)
 $stmt->execute([
-  $_POST['Member_ID'],
   $_POST['First_Name'],
   $_POST['Last_Name'],
   $_POST['Title'],
@@ -30,10 +29,11 @@ $stmt->execute([
   $_POST['Radio'],
   $_POST['Station'],
   $_POST['IsActive'],
+  $_POST['Secondary_Phone']
 ]);
 
 // If needed, get auto-generated PK from DB
-// $pk = $db->lastInsertId();  // https://www.php.net/manual/en/pdo.lastinsertid.php
+$pk = $db->lastInsertId();  // https://www.php.net/manual/en/pdo.lastinsertid.php
 
 // Step 4: Output
 // Here, instead of giving output, I'm redirecting to the SELECT API,
