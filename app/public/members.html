@@ -78,22 +78,23 @@
 				<!-- <div class="icon"><i class="fab fa-envira fa-3x"></i></div> -->
 				<h2>Add Members</h2>
 				<p>
-                    <form method="post" v-on:submit.prevent="handleNewMemberForm">
+                    <div class = "members">
+                    <form method="post" v-on:submit.prevent="handleNewMemberForm()">
                         <div class="form-group">
                             <label for="First">First:</label> &nbsp;
-                            <input type="text" id="First" v-model="NewMemberForm.First_Name">
+                            <input type="text" id="First" v-model="newMemberForm.First_Name">
                         </div>
                         <div class="form-group">
                             <label for="Last">Last:</label> &nbsp;
-                            <input type="text" id="Last" v-model="NewMemberForm.Last_Name">
+                            <input type="text" id="Last" v-model="newMemberForm.Last_Name">
                         </div>
                         <div class="form-group">
                             <label for="Title">Title:</label> &nbsp;
-                            <input type="text" id="Title" v-model="NewMemberForm.Title">
+                            <input type="text" id="Title" v-model="newMemberForm.Title">
                         </div>
                         <div class="form-group">
                             <label for="Gender">Gender:</label> &nbsp; 
-                            <select class="form-control" v-model="NewMemberForm.Gender" id="Gender">
+                            <select class="form-control" v-model="newMemberForm.Gender" id="Gender">
                             <option value="M">Male</option>
                             <option value="F">Female</option>
                             <option value="O">Other/Unknown</option>
@@ -101,45 +102,46 @@
                         </div>
                         <div class="form-group">
                             <label for="Address">Address:</label> &nbsp;
-                            <input type="text" id="Address" v-model="NewMemberForm.MemberStreet">
+                            <input type="text" id="Address" v-model="newMemberForm.MemberStreet">
                         </div>
                         <div class="form-group">
                             <label for="City">City:</label> &nbsp;
-                            <input type="text" id="City"v-model="NewMemberForm.MemberCity">
+                            <input type="text" id="City"v-model="newMemberForm.MemberCity">
                         </div>
                         <div class="form-group">
                             <label for="State">State:</label> &nbsp;
-                            <input type="text" id="State" v-model="NewMemberForm.MemberState">
+                            <input type="text" id="State" v-model="newMemberForm.MemberState">
                         </div>
                         <div class="form-group">
                             <label for="Zip">Zip Code:</label> &nbsp;
-                            <input type="text" id="Zip" v-model="NewMemberForm.MemberZipCode">
+                            <input type="text" id="Zip" v-model="newMemberForm.MemberZipCode">
                         </div>
                         <div class="form-group">
                             <label for="Phone1">Cell Phone:</label> &nbsp;
-                            <input type="text" id="Phone1" v-model="NewMemberForm.MemberPhone">
+                            <input type="text" id="Phone1" v-model="newMemberForm.MemberPhone">
                         </div>
                         <div class="form-group">
                             <label for="Phone2">Work Phone:</label> &nbsp;
-                            <input type="text" id="Phone2" v-model="NewMemberForm.Secondary_Phone">
+                            <input type="text" id="Phone2" v-model="newMemberForm.Secondary_Phone">
                         </div>
                         <div class="form-group">
                             <label for="Radio">Radio Number:</label> &nbsp;
-                            <input type="text" id="Radio" v-model="NewMemberForm.Radio">
+                            <input type="text" id="Radio" v-model="newMemberForm.Radio">
                         </div>
                         <div class="form-group">
                             <label for="Department">Station:</label> &nbsp;
-                            <input type="text" id="Department" v-model="NewMemberForm.Station">
+                            <input type="text" id="Department" v-model="newMemberForm.Station">
                         </div>
                         <div class="form-group">
                             <label for="Active">Active:</label> &nbsp; IsActive
-                            <select class="form-control" v-model="NewMemberForm.IsActive" id="IsActive">
+                            <select class="form-control" v-model="newMemberForm.IsActive" id="IsActive">
                                 <option value="Yes">Yes</option>
                                 <option value="NO">No</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-primary">Create</button>
+                        <button type="submit" value="Create Member" class="btn btn-primary">Create</button>
                     </form>
+                </div>
                 </p>
 			</section>
 			<section>

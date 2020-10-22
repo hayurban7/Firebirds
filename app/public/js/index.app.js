@@ -1,38 +1,7 @@
 var app = new Vue({
     el: '#firefighter',
     data: {
-      memberList: [],//Member - Madison 
-      certList: [], //Certifications - Hayley
-      activeMember: null,
-      newMemberForm: {}, //Member - Madison 
-      newCertForm: {},//Certifications - Hayley
-      tableRows:['Table Row 1', 'Table Row 2'],
-      counter:2
-    },
-    // computed: {
-    //   activeMember(){
-    //     //finish
-    //   }
-    // },
-    methods: {
-      fetchCert(){
-        fetch('api/certifications/index.php')
-        .then(response => response.json())
-        .then(json => {
-            this.users=json;
-            console.log(this.users);
-        });
-      },
-        fetchMember(){
-          fetch('api/members/index.php')
-          .then(response => response.json())
-          .then(json => {
-              this.users=json;
-              console.log(this.users);
-          });
-        },
-      newMemberData() {
-        return {
+      members: [{
           First_Name:"", 
           Last_Name:"", 
           Title:"", 
@@ -46,15 +15,65 @@ var app = new Vue({
           Radio:"", 
           Station:"", 
           IsActive:""
-        }
-      },
-      newCertData(){
-        return{
+        }],
+        newMemberData: {
+          First_Name:"", 
+          Last_Name:"", 
+          Title:"", 
+          Gender:"", 
+          MemberStreet:"", 
+          MemberCity:"", 
+          MemberState:"", 
+          MemberZipCode:"", 
+          MemberPhone:"",
+          Secondary_Phone:"",
+          Radio:"", 
+          Station:"", 
+          IsActive:""
+        },
+
+      cert:[{
           Certification_ID:"",
           Certifcate_Name:"",
           Exp_period:""
-        }
+        }],
+      newCertData:{
+        Certification_ID:"",
+        Certifcate_Name:"",
+        Exp_period:""
+      }
       },
+      // memberList: [],//Member - Madison 
+      // certList: [], //Certifications - Hayley
+      // activeMember: null,
+      // newMemberForm: {}, //Member - Madison 
+      // newCertForm: {},//Certifications - Hayley
+      // tableRows:['Table Row 1', 'Table Row 2'],
+      // counter:2
+    //},
+    // computed: {
+    //   activeMember(){
+    //     //finish
+    //   }
+    // },
+    methods: {
+      fetchCert(){
+        fetch('api/certifications/index.php')
+        .then(response => response.json())
+        .then(json => {
+            this.cert=json;
+            console.log(this.cert);
+        });
+      },
+        fetchMember(){
+          fetch('api/members/index.php')
+          .then(response => response.json())
+          .then(json => {
+              this.members=json;
+              console.log(this.members);
+          });
+        },
+      
       handleNewMemberForm() {//Member - Madison - post new member form 
         // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
   
