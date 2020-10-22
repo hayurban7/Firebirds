@@ -15,6 +15,22 @@ var app = new Vue({
       }
     },
     methods: {
+      fetchCert(){
+        fetch('api/certifications/index.php')
+        .then(response => response.json())
+        .then(json => {
+            this.users=json;
+            console.log(this.users);
+        });
+      },
+        fetchMember(){
+          fetch('api/members/index.php')
+          .then(response => response.json())
+          .then(json => {
+              this.users=json;
+              console.log(this.users);
+          });
+        },
       newMemberData() {
         return {
           First_Name:"", 
@@ -39,7 +55,7 @@ var app = new Vue({
           Exp_period:""
         }
       },
-      handleNewMemberForm( evt ) {//Member - Madison - post new member form 
+      handleNewMemberForm() {//Member - Madison - post new member form 
         // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
   
         // TODO: Validate the data!
@@ -62,7 +78,25 @@ var app = new Vue({
         console.log("Creating (POSTing)...!");
         console.log(this.newMemberForm);
       },
-      handleCertificationForm( evt ) {//Certification - Hayley - post new certification form 
+
+      newMemberData(){
+        return{
+          First_Name:"", 
+          Last_Name:"", 
+          Title:"", 
+          Gender:"", 
+          MemberStreet:"", 
+          MemberCity:"", 
+          MemberState:"", 
+          MemberZipCode:"", 
+          MemberPhone:"",
+          Secondary_Phone:"",
+          Radio:"", 
+          Station:"", 
+          IsActive:""
+        }
+      },
+      handleCertificationForm() {//Certification - Hayley - post new certification form 
           // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
     
           // TODO: Validate the data!
@@ -78,7 +112,7 @@ var app = new Vue({
           .then( json => {
             console.log("Returned from post:", json);
             // TODO: test a result was returned!
-            this.certList.push(json[0]);
+            this.certList.push(json[0]); //Maybe no zero
             this.newCertForm = this.newCertData();
           });
     
@@ -87,23 +121,16 @@ var app = new Vue({
     
           
         },
-        handleCertificationForm( evt ) { //idk if we need this
-          console.log("Form submitted!");
-    
-          this.CertificationForm.member = this.activeMember; //CHECK THIS
-          console.log(this.CertificationForm);
-    
-        },
-        // add and delete rows functions from https://www.tutorialsplane.com/vue-js-delete-table-row/
-        addTableRow: function () { 
-          this.counter++;
-          this.tableRows.push("Table Row "+this.counter);
-          
-        },
-        deleteTableRow: function (idx) { 
-          this.counter--;
-          this.tableRows.splice(idx, 1);      
+        newCertData(){
+          return{
+            Certification_ID:"",
+            Certifcate_Name:"",
+            Exp_period:""
+          }
         }
+       
+        
+        
     },
     created() {
       fetch("api/members/index.php")//Member - Madison 
@@ -120,11 +147,8 @@ var app = new Vue({
   
         console.log(json)}
       );
-
-
-
-      
-    
+      this.fetchCert();
+      this.fetchMember();
     }
     
   })
