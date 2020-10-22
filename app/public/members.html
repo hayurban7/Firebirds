@@ -56,24 +56,25 @@
 
 	<!-- Highlights -->
 	<article class="highlights">
-		<h2 class="sr-only">Highlights</h2>
+		<h2 class="sr-only">Members</h2>
 		<!-- <div class="container" id="memberProfile" > -->
         <div class="container" id="firefighter" >
 			<section>
 				<div class="icon"><i class="fab fa-pagelines fa-3x"></i></div>
                 <h2>Members</h2>
-                <div v-for="member in memberList">
+                <div>
                         <table>
-                            <tr>
-                                <td>{{member.First_Name}} {{member.Last_Name}}</td>
-                                <td><button @click='deleteTableRow({{member.Member_ID}})' >Delete</button></td>
-                                <td><a href="memdetails.html">Details</a></td>
-                            </tr>
+                            <tbody>
+                                <tr v-for="member in memberList">
+                                    <td>{{member.First_Name}} {{member.Last_Name}}</td>
+                                    <td><a href="#">Delete</a></td>
+                                    <td><a href="memdetails.html">Details</a></td>
+                                </tr>
+                            </tbody>
                         </table>
                 </div>
-            </div>
+                </div>
 			</section>
-			<section>
 				<!-- <div class="icon"><i class="fab fa-envira fa-3x"></i></div> -->
 				<h2>Add Members</h2>
 				<p>
@@ -81,11 +82,11 @@
                         <div class="form-group">
                             <label for="First">First:</label> &nbsp;
                             <input type="text" id="First" v-model="NewMemberForm.First_Name">
-                        </div>>
+                        </div>
                         <div class="form-group">
                             <label for="Last">Last:</label> &nbsp;
                             <input type="text" id="Last" v-model="NewMemberForm.Last_Name">
-                        </div>>
+                        </div>
                         <div class="form-group">
                             <label for="Title">Title:</label> &nbsp;
                             <input type="text" id="Title" v-model="NewMemberForm.Title">

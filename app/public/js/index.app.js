@@ -9,11 +9,11 @@ var app = new Vue({
       tableRows:['Table Row 1', 'Table Row 2'],
       counter:2
     },
-    computed: {
-      activeMember(){
-        //finish
-      }
-    },
+    // computed: {
+    //   activeMember(){
+    //     //finish
+    //   }
+    // },
     methods: {
       fetchCert(){
         fetch('api/certifications/index.php')
