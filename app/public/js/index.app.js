@@ -148,12 +148,12 @@ var app = new Vue({
           .then( json => {
             console.log("Returned from post:", json);
             // TODO: test a result was returned!
-            this.newCert=json; //Maybe no zero
+            this.cert=json; //Maybe no zero
             this.newCert = this.newCertData();
           });
     
           console.log("Creating (POSTing)...!");
-          console.log(this.newCertification);
+          console.log(this.newCert);
     
           
         },
