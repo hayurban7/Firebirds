@@ -36,8 +36,8 @@ CREATE TABLE Members
 );
 
 INSERT INTO Members VALUES (1,"Kathryn","Pryde","Chief","Female","1123 Xavier School Drive","Watkinsville","GA","30677","7075551234","A-1","0",1,"7075552345");
-INSERT INTO Members VALUES (2,"Piotr", "Rasputin",null,"Male","A31 Mother Russia Road","Seattle","WA","98133",null,"841","8",1,"2065559876");
-INSERT INTO Members VALUES (3,"Warren", "Worthington III",null,"Male","1140 Expiriment Station Road","Watkinsville","GA","30677","7065553945","122","1",1,null);
+INSERT INTO Members VALUES (2,"Piotr", "Rasputin","Mr","Male","A31 Mother Russia Road","Seattle","WA","98133",null,"841","8",1,"2065559876");
+INSERT INTO Members VALUES (3,"Warren", "Worthington III","Mr","Male","1140 Expiriment Station Road","Watkinsville","GA","30677","7065553945","122","1",1,null);
 
 
 
@@ -45,11 +45,11 @@ INSERT INTO Members VALUES (3,"Warren", "Worthington III",null,"Male","1140 Expi
 
 CREATE TABLE Certifications
 
-             (Certification_ID        INT NOT NULL Primary key auto_increment,
+             (Certification_ID  INT NOT NULL Primary key auto_increment,
 
 	      Certificate_Name    VARCHAR(30)    NOT NULL,
 
-          Exp_period INT,
+          Exp_period INT
 );
 INSERT INTO Certifications VALUES (1,"CPR (CPR for Healthcare Providers/American Heart Association)", 2);
 INSERT INTO Certifications VALUES (2,"CPR (CPR for the Professional Rescuer/American Red Cross)", 2);
