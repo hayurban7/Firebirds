@@ -63,8 +63,7 @@
 				<h2>Certifications</h2>
 					<section>
 						<div class="icon"><i class="fab fa-pagelines fa-3x"></i></div>
-		                <h2>Members</h2>
-		                <div v-for="cert in certList">
+		                <div v-for="cert in cert">
 
 		                    <p>
 		                        <table>
@@ -83,17 +82,19 @@
 				<div class="icon"><i class="fas fa-coffee fa-3x"></i></div>
 				<h2>Add Certification</h2>
 				<p>
-                    <form v-on:submit="">
-                        <label for="Name">Certification Name:</label> &nbsp;
-                        <input type="text" id="Name" name="Name">
-                        <br>
-                        <label for="agency">Offering Agency:</label> &nbsp;
-                        <input type="text" id="agency" name="agency">
-                        <br>
-                        <label for="experiod">Expiration Period:</label> &nbsp;
-                        <input type="text" id="experiod" name="experiod">
-                        <br>
-                        <button class="submit">Submit</button>
+                    <form v-on:submit.prevent="handleCertificationForm()">
+						<div class="cert">
+							<label for="Certificate_Name">Certification Name:</label> &nbsp;
+							<input class=form-control type="text" id="Certificate_Name" v-model="cert.Certificate_Name">
+							<br>
+							<!-- <label for="agency">Offering Agency:</label> &nbsp;
+							<input type="text" id="agency" name="agency"  v-model="cert.Certificate_Name">
+							<br> -->
+							<label for="Exp_period">Expiration Period:</label> &nbsp;
+							<input class=form-control type="text" id="Exp_period" v-model="cert.Exp_period">
+							<br>
+						</div>
+                        <button type="submit" value="Create Member" class="button">Submit</button>
                     </form>
                 </p>
 			</section>
