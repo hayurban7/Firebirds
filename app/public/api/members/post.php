@@ -12,12 +12,11 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'INSERT INTO Members (Member_ID, First_Name, Last_Name, Title, Gender, MemberStreet, MemberCity, MemberState, MemberZipCode, MemberPhone, Radio, Station, IsActive, Secondary_Phone)
+  'INSERT INTO Members (First_Name, Last_Name, Title, Gender, MemberStreet, MemberCity, MemberState, MemberZipCode, MemberPhone, Radio, Station, IsActive, Secondary_Phone)
   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
 );
 // might not end up needing all fields (this lists all from member table)
 $stmt->execute([
-  $_POST['Member_ID'],
   $_POST['First_Name'],
   $_POST['Last_Name'],
   $_POST['Title'],
