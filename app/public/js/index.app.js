@@ -106,8 +106,9 @@ var app = new Vue({
         .then( response => response.json() )
         .then( json => {
           console.log("Returned from post:", json);
+          this.members.push(json[0]);
           // TODO: test a result was returned!
-          this.members=json;
+          // HAYLEYS EDITthis.members=json;
           this.newMember = this.newMemberData();
         });
   
