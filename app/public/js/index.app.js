@@ -33,13 +33,13 @@ var app = new Vue({
         },
 
       cert:[{
-          Certification_ID:"",
-          Certifcate_Name:"",
+          //Certification_ID:"",
+          Certificate_Name:"",
           Exp_period:""
         }],
       newCert:{
-          Certification_ID:"",
-          Certifcate_Name:"",
+          //Certification_ID:"",
+          Certificate_Name:"",
           Exp_period:""
         },
       //memberList: [],//Member - Madison 
@@ -106,7 +106,7 @@ var app = new Vue({
         .then( response => response.json() )
         .then( json => {
           console.log("Returned from post:", json);
-          this.members.push(json[0]);
+          this.members=json;
           // TODO: test a result was returned!
           // HAYLEYS EDITthis.members=json;
           this.newMember = this.newMemberData();
@@ -138,7 +138,7 @@ var app = new Vue({
     
           // TODO: Validate the data!
     
-          fetch('api/members/post.php', {
+          fetch('api/certifications/post.php', {
             method:'POST',
             body: JSON.stringify(this.newCertForm),
             headers: {
@@ -160,8 +160,7 @@ var app = new Vue({
         },
       newCertData(){
           return{
-            Certification_ID:"",
-            Certifcate_Name:"",
+            Certificate_Name:"",
             Exp_period:""
           }
         }  

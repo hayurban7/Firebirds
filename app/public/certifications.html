@@ -75,7 +75,6 @@
 		                        </table>
 		                    </p>
 		                </div>
-		            </div>
 					</section>
 
 			<section>
@@ -85,13 +84,13 @@
                     <form v-on:submit.prevent="handleCertificationForm()">
 						<div class="cert">
 							<label for="Certificate_Name">Certification Name:</label> &nbsp;
-							<input class=form-control type="text" id="Certificate_Name" v-model="cert.Certificate_Name">
+							<input class=form-control type="text" id="Certificate_Name" v-model="newCert.Certificate_Name">
 							<br>
 							<!-- <label for="agency">Offering Agency:</label> &nbsp;
 							<input type="text" id="agency" name="agency"  v-model="cert.Certificate_Name">
 							<br> -->
 							<label for="Exp_period">Expiration Period:</label> &nbsp;
-							<input class=form-control type="text" id="Exp_period" v-model="cert.Exp_period">
+							<input class=form-control type="text" id="Exp_period" v-model="newCert.Exp_period">
 							<br>
 						</div>
                         <button type="submit" value="Create Member" class="button">Submit</button>
