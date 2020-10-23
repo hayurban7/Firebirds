@@ -24,19 +24,20 @@ CREATE TABLE Members
 
               MemberZipCode     VARCHAR(10)    NOT NULL,
 
-              MemberPhone VARCHAR(10)            NOT NULL,
+              MemberPhone VARCHAR(11),
 
               Radio  VARCHAR(10)    NOT NULL,
 
-              Station INT(25) NOT NULL,
+              Station VARCHAR(25) NOT NULL,
 
               IsActive BOOLEAN NOT NULL,
 
-              Secondary_Phone  VARCHAR(10)
+              Secondary_Phone  VARCHAR(11)
 );
 
-INSERT INTO Members VALUES (2, "Piotr", "Rasputin",null,"Male","A31 Mother Russia Road","Seattle","WA","98133",null,"841",8,1,"2065559876");
-INSERT INTO Members VALUES (3, "Warren", "Worthington III",null,"Male","1140 Expiriment Station Road","Watkinsville","GA","30677","7065553945","122",1,1,null);
+INSERT INTO Members VALUES (1,"Kathryn","Pryde","Chief","Female","1123 Xavier School Drive","Watkinsville","GA","30677","7075551234","A-1","0",1,"7075552345");
+INSERT INTO Members VALUES (2,"Piotr", "Rasputin",null,"Male","A31 Mother Russia Road","Seattle","WA","98133",null,"841","8",1,"2065559876");
+INSERT INTO Members VALUES (3,"Warren", "Worthington III",null,"Male","1140 Expiriment Station Road","Watkinsville","GA","30677","7065553945","122","1",1,null);
 
 
 
@@ -48,18 +49,19 @@ CREATE TABLE Certifications
 
 	      Certificate_Name    VARCHAR(30)    NOT NULL,
 
-          Exp_period INT NOT NULL,
+          Exp_period INT,
 );
-
-INSERT INTO Certifications VALUES (3, "Firefighter I (Athens Technical College)", 3);
-INSERT INTO Certifications VALUES (4, "Firefighter I (Ivy Technical College)",3);
-INSERT INTO Certifications VALUES (5, "POST (Georgia POST Academy)",5);
-INSERT INTO Certifications VALUES (6, "HAZMAT",2);
-INSERT INTO Certifications VALUES (7, "Extrication",100);
-INSERT INTO Certifications VALUES (8, "EMT-Adv",2);
-INSERT INTO Certifications VALUES (9, "Due Regard",1);
-INSERT INTO Certifications VALUES (10, "Paramedic", 3);
-INSERT INTO Certifications VALUES (11, "Firefighter II",2);
+INSERT INTO Certifications VALUES (1,"CPR (CPR for Healthcare Providers/American Heart Association)", 2);
+INSERT INTO Certifications VALUES (2,"CPR (CPR for the Professional Rescuer/American Red Cross)", 2);
+INSERT INTO Certifications VALUES (3,"Firefighter I (Athens Technical College)", 3);
+INSERT INTO Certifications VALUES (4,"Firefighter I (Ivy Technical College)",3);
+INSERT INTO Certifications VALUES (5,"POST (Georgia POST Academy)",5);
+INSERT INTO Certifications VALUES (6,"HAZMAT",2);
+INSERT INTO Certifications VALUES (7,"Extrication",null);
+INSERT INTO Certifications VALUES (8,"EMT-Adv",2);
+INSERT INTO Certifications VALUES (9,"Due Regard",1);
+INSERT INTO Certifications VALUES (10,"Paramedic", 3);
+INSERT INTO Certifications VALUES (11,"Firefighter II",2);
 
 CREATE TABLE Certification_Details
 
@@ -69,12 +71,16 @@ CREATE TABLE Certification_Details
 
               Certification_ID            INT    NOT NULL,
 
-              Exp_Date      DATE        NOT NULL,
+              Exp_Date      DATE,
 
 CONSTRAINT CERTIFICATION_DETAILS_FK1 FOREIGN KEY (Member_ID) REFERENCES Members(Member_ID),
 
 CONSTRAINT CERTIFICATION_DETAILS_FK2 FOREIGN KEY (Certification_ID) REFERENCES Certifications(Certification_ID));
 
+INSERT INTO Certification_Details VALUES (1,1,11,'2020-08-01');
+INSERT INTO Certification_Details VALUES (2,1,1,'2021-07-01');
+INSERT INTO Certification_Details VALUES (3,1,6,'2020-02-01');
+INSERT INTO Certification_Details VALUES (4,1,7,null);
 INSERT INTO Certification_Details VALUES(5,2,8,'2020-09-01');
 INSERT INTO Certification_Details VALUES(6,2,1,'2021-07-01');
 INSERT INTO Certification_Details VALUES(7,2,9,'2021-10-01');
