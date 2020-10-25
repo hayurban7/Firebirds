@@ -5,8 +5,8 @@ $db = DbConnection::getConnection();
 
 // Update record
 if($request == 3){
-  $name = $data->name;
-  $email = $data->email;
+  $Member_ID = $data->Member_ID;
+  $First_Name = $data->First_Name;
 
   mysqli_query($con,"UPDATE Members SET
     Member_ID='".$Member_ID."',
