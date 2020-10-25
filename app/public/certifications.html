@@ -63,11 +63,11 @@
 				<h2>Certifications</h2>
 					<section>
 						<div class="icon"><i class="fab fa-pagelines fa-3x"></i></div>
-		                <div v-for="cert in cert">
+		                <div >
 
 		                    <p>
 		                        <table>
-		                            <tr>
+		                            <tr class="cert" v-for="cert in cert">
 		                                <td>{{cert.Certificate_Name}}</td>
 		                                <td><a href="#">Delete</a></td>
 		                                <td><a href="certdetails.html">Details</a></td>
@@ -81,20 +81,24 @@
 				<div class="icon"><i class="fas fa-coffee fa-3x"></i></div>
 				<h2>Add Certification</h2>
 				<p>
+					<div class="cert">
                     <form v-on:submit.prevent="handleCertificationForm()">
-						<div class="cert">
-							<label for="Certificate_Name">Certification Name:</label> &nbsp;
-							<input class=form-control type="text" id="Certificate_Name" v-model="newCert.Certificate_Name">
-							<br>
+							<div class="form-group">
+								<label for="Certificate_Name">Certification Name:</label> &nbsp;
+								<input class=form-control type="text" id="Certificate_Name" v-model="newCert.Certificate_Name">
+								<br>
+							</div>
 							<!-- <label for="agency">Offering Agency:</label> &nbsp;
 							<input type="text" id="agency" name="agency"  v-model="cert.Certificate_Name">
 							<br> -->
-							<label for="Exp_period">Expiration Period:</label> &nbsp;
-							<input class=form-control type="text" id="Exp_period" v-model="newCert.Exp_period">
-							<br>
-						</div>
-                        <button type="submit" value="Create Member" class="button">Submit</button>
-                    </form>
+							<div class="form-group">
+								<label for="Exp_period">Expiration Period:</label> &nbsp;
+								<input class=form-control type="text" id="Exp_period" v-model="newCert.Exp_period">
+								<br>
+							</div>
+                        <button type="submit" value="Create Certificate" class="btn btn-primary">Create</button>
+					</form>
+					</div>
                 </p>
 			</section>
 		</div>
