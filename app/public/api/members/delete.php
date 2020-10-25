@@ -1,20 +1,40 @@
 <?php
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-$link = mysqli_connect("localhost", "root", "", "demo");
- 
-// Check connection
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
+$db = DbConnection::getConnection();
+
+// Update record
+if($request == 3){
+  $name = $data->name;
+  $email = $data->email;
+
+  mysqli_query($con,"UPDATE Members SET
+    Member_ID='".$Member_ID."',
+    First_Name='".$First_Name."',
+    Last_Name='".$Last_Name."',
+    Title='".$Title."',
+    Gender='".$Gender."',
+    MemberStreet='".$MemberStreet."',
+    MemberCity='".$MemberCity."',
+    MemberState='".$MemberState."',
+    MemberZipCode='".$MemberZipCode."',
+    MemberPhone='".$MemberPhone."',
+    Secondary_Phone='".$Secondary_Phone."',
+    Radio='".$Radio."',
+    Station='".$Station."',
+    IsActive='".$IsActive."'
+    ""WHERE Member_ID=".$id);
+
+  echo "Update successfully";
+  exit;
 }
- 
-// Attempt delete query execution
-$sql = "DELETE FROM persons WHERE first_name='John'";
-if(mysqli_query($link, $sql)){
-    echo "Records were deleted successfully.";
-} else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+
+// Delete record
+if($request == 4){
+  $Member_ID = $data->id;
+
+  mysqli_query($con,"DELETE FROM Members WHERE Member_ID=".$id);
+
+  echo "Delete successfully";
+  exit;
 }
- 
-// Close connection
-mysqli_close($link);
