@@ -7,6 +7,18 @@ $db = DbConnection::getConnection();
 if($request == 3){
   $Member_ID = $data->Member_ID;
   $First_Name = $data->First_Name;
+  $Last_Name = $data->Last_Name;
+  $Title = $data->Title;
+  $Gender = $data->Gender;
+  $MemberStreet = $data->MemberStreet;
+  $MemberCity = $data->MemberCity;
+  $MemberState = $data->MemberState;
+  $MemberZipCode = $data->MemberZipCode;
+  $MemberPhone = $data->MemberPhone;
+  $Secondary_Phone = $data->Secondary_Phone;
+  $Radio = $data->Radio;
+  $Station = $data->Station;
+  $IsActive = $data->IsActive;
 
   mysqli_query($con,"UPDATE Members SET
     Member_ID='".$Member_ID."',
