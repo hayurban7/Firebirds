@@ -84,16 +84,13 @@
 					<div class="cert">
                     <form v-on:submit.prevent="handleCertificationForm()">
 							<div class="form-group">
-								<label for="Certificate_Name">Certification Name:</label> &nbsp;
-								<input class=form-control type="text" id="Certificate_Name" v-model="newCert.Certificate_Name">
+								<label for="Name">Certification Name:</label> &nbsp;
+								<input type="text" id="Name" v-model="newCert.Certificate_Name">
 								<br>
 							</div>
-							<!-- <label for="agency">Offering Agency:</label> &nbsp;
-							<input type="text" id="agency" name="agency"  v-model="cert.Certificate_Name">
-							<br> -->
 							<div class="form-group">
-								<label for="Exp_period">Expiration Period:</label> &nbsp;
-								<input class=form-control type="text" id="Exp_period" v-model="newCert.Exp_period">
+								<label for="Year">Expiration Period:</label> &nbsp;
+								<input type="text" id="Year" v-model="newCert.Exp_period">
 								<br>
 							</div>
                         <button type="submit" value="Create Certificate" class="btn btn-primary">Create</button>

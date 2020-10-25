@@ -33,15 +33,13 @@ var app = new Vue({
         },
 
       cert:[{
-          //Certification_ID:"",
           Certificate_Name:"",
           Exp_period:""
         }],
       newCert:{
-          //Certification_ID:"",
           Certificate_Name:"",
           Exp_period:""
-        },
+        }
       //memberList: [],//Member - Madison 
       //certList: [], //Certifications - Hayley
       // activeMember: null,
@@ -140,7 +138,7 @@ var app = new Vue({
     
           fetch('api/certifications/post.php', {
             method:'POST',
-            body: JSON.stringify(this.newCertForm),
+            body: JSON.stringify(this.newCert),
             headers: {
               "Content-Type": "application/json; charset=utf-8"
             }
