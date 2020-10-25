@@ -2,33 +2,33 @@ var app = new Vue({
     el: '#firefighter',
     data: {
       members: [{
-          First_Name:"", 
-          Last_Name:"", 
-          Title:"", 
-          Gender:"", 
-          MemberStreet:"", 
-          MemberCity:"", 
-          MemberState:"", 
-          MemberZipCode:"", 
+          First_Name:"",
+          Last_Name:"",
+          Title:"",
+          Gender:"",
+          MemberStreet:"",
+          MemberCity:"",
+          MemberState:"",
+          MemberZipCode:"",
           MemberPhone:"",
           Secondary_Phone:"",
-          Radio:"", 
-          Station:"", 
+          Radio:"",
+          Station:"",
           IsActive:""
         }],
       newMember: {
-          First_Name:"", 
-          Last_Name:"", 
-          Title:"", 
-          Gender:"", 
-          MemberStreet:"", 
-          MemberCity:"", 
-          MemberState:"", 
-          MemberZipCode:"", 
+          First_Name:"",
+          Last_Name:"",
+          Title:"",
+          Gender:"",
+          MemberStreet:"",
+          MemberCity:"",
+          MemberState:"",
+          MemberZipCode:"",
           MemberPhone:"",
           Secondary_Phone:"",
-          Radio:"", 
-          Station:"", 
+          Radio:"",
+          Station:"",
           IsActive:""
         },
 
@@ -40,10 +40,10 @@ var app = new Vue({
           Certificate_Name:"",
           Exp_period:""
         }
-      //memberList: [],//Member - Madison 
+      //memberList: [],//Member - Madison
       //certList: [], //Certifications - Hayley
       // activeMember: null,
-      // newMemberForm: {}, //Member - Madison 
+      // newMemberForm: {}, //Member - Madison
       // newCertForm: {},//Certifications - Hayley
       // tableRows:['Table Row 1', 'Table Row 2'],
       // counter:2
@@ -54,18 +54,18 @@ var app = new Vue({
     //   }
     // },
     created() {
-      // fetch("api/members/index.php")//Member - Madison 
+      // fetch("api/members/index.php")//Member - Madison
       // .then( response => response.json() )
       // .then( json => {
       //   this.members = json;
-  
+
       //   console.log(json)}
       // );
       // fetch("api/certifications/index.php")
       // .then( response => response.json() )
       // .then( json => {
       //   this.certList = json;
-  
+
       //   console.log(json)}
       // );
       this.fetchCert();
@@ -88,12 +88,12 @@ var app = new Vue({
               console.log(this.members);
           });
         },
-      
-      handleNewMemberForm() {//Member - Madison - post new member form 
+
+      handleNewMemberForm() {//Member - Madison - post new member form
         // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
-  
+
         // TODO: Validate the data!
-  
+
         fetch('api/members/post.php', {
           method:'POST',
           body: JSON.stringify(this.newMember),
@@ -109,33 +109,33 @@ var app = new Vue({
           // HAYLEYS EDITthis.members=json;
           this.newMember = this.newMemberData();
         });
-  
+
         console.log("Creating (POSTing)...!");
         console.log(this.newMember);
       },
 
       newMemberData(){
         return{
-          First_Name:"", 
-          Last_Name:"", 
-          Title:"", 
-          Gender:"", 
-          MemberStreet:"", 
-          MemberCity:"", 
-          MemberState:"", 
-          MemberZipCode:"", 
+          First_Name:"",
+          Last_Name:"",
+          Title:"",
+          Gender:"",
+          MemberStreet:"",
+          MemberCity:"",
+          MemberState:"",
+          MemberZipCode:"",
           MemberPhone:"",
           Secondary_Phone:"",
-          Radio:"", 
-          Station:"", 
+          Radio:"",
+          Station:"",
           IsActive:""
         }
       },
-      handleCertificationForm() {//Certification - Hayley - post new certification form 
+      handleCertificationForm() {//Certification - Hayley - post new certification form
           // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
-    
+
           // TODO: Validate the data!
-    
+
           fetch('api/certifications/post.php', {
             method:'POST',
             body: JSON.stringify(this.newCert),
@@ -150,21 +150,34 @@ var app = new Vue({
             this.cert=json; //Maybe no zero
             this.newCert = this.newCertData();
           });
-    
+
           console.log("Creating (POSTing)...!");
           console.log(this.newCert);
-    
-          
+
+
         },
       newCertData(){
           return{
             Certificate_Name:"",
             Exp_period:""
           }
-        }  
-        
+        },
+      deleteMember(id){
+         if(confirm("Are you sure you want to delete this member?")){
+         $id = $_POST['Member_ID'];
+         $query_string = "delete from $Members where Member_ID='$id'";
+         $result = mysql_query($result);
+         return false;
+       },
+       deleteCertification(id){
+          if(confirm("Are you sure you want to delete this certification?")){
+          $id = $_POST['Certification_ID'];
+          $query_string = "delete from $Certifications where Certification_ID='$id'";
+          $result = mysql_query($result);
+          return false;
+        } 
     }
 
-    
+
+
   })
-  
