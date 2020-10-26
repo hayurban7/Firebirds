@@ -162,26 +162,68 @@ var app = new Vue({
             Exp_period:""
           }
         },
-      deleteMember(id){
-         if(confirm("Are you sure you want to delete this member?")){
-         $id = $_POST['Member_ID'];
-         $query_string = "delete from $Members where Member_ID='$id'";
-         $result = mysql_query($result);
-         return false;
-       }
-      },
-      //  Delete API from https://makitweb.com/insert-update-delete-records-from-mysql-with-vue-js/
+      // deleteMember(Member_ID){
+      //    if(confirm("Are you sure you want to delete this member?")){
+      //    $Member_ID = $_POST['Member_ID'];
+      //    $request = $_POST['4'];
+      //    $query_string = "delete from $Members where Member_ID='$Member_ID'";
+      //    $result = mysql_query($result);
+      //    return false;
+      //  }
+      // },
+      // //  Delete API from https://makitweb.com/insert-update-delete-records-from-mysql-with-vue-js/
+      //
+      //  deleteCertification(id){
+      //     if(confirm("Are you sure you want to delete this certification?")){
+      //     $id = $_POST['Certification_ID'];
+      //     $query_string = "delete from $Certifications where Certification_ID='$id'";
+      //     $result = mysql_query($result);
+      //     return false;
+      //   }
+      // }
+      updateRecord: function(index,Certification_ID){
 
-       deleteCertification(id){
-          if(confirm("Are you sure you want to delete this certification?")){
-          $id = $_POST['Certification_ID'];
-          $query_string = "delete from $Certifications where Certification_ID='$id'";
-          $result = mysql_query($result);
-          return false;
-        }
-      }
+  // Read value from Textbox maybe this.cert instead
+        var Certificate_Name = this.cert[index].Certificate_Name;
+        var Exp_period = this.cert[index].Exp_period;
+
+  if(Certificate_Name !=''){
+    axios.post('api/certifcations/delete.php', {
+      request: 3,
+      Certification_ID: Certification_ID,
+      Certificate_Name: Certificate_Name,
+      Exp_period: Exp_period
+    })
+    .then(function (response) {
+      alert(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+},
+deleteRecord: function(index,Certification_ID){
+
+  fetch('api/certifications/delete.php', {
+    method:'POST',
+    // body: JSON.stringify(this.cert),
+    headers: {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    request: 4,
+    Certification_ID: Certification_ID
+  })
+  .then(function (response) {
+
+    // Remove index from users
+    app.cert.splice(index, 1);
+    alert(response.data);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
     }
 
 
-
+  }
   })

@@ -34,7 +34,7 @@ if($request == 3){
     Radio='".$Radio."',
     Station='".$Station."',
     IsActive='".$IsActive."'
-    ""WHERE Member_ID=".$id);
+    ""WHERE Member_ID=".$Member_ID);
 
   echo "Update successfully";
   exit;
@@ -42,9 +42,9 @@ if($request == 3){
 
 // Delete record
 if($request == 4){
-  $Member_ID = $data->id;
+  $Member_ID = $data->Member_ID;
 
-  mysqli_query($con,"DELETE FROM Members WHERE Member_ID=".$id);
+  mysqli_query($con,"DELETE FROM Members WHERE Member_ID=".$Member_ID);
 
   echo "Delete successfully";
   exit;
