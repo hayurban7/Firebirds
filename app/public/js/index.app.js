@@ -168,14 +168,17 @@ var app = new Vue({
          $query_string = "delete from $Members where Member_ID='$id'";
          $result = mysql_query($result);
          return false;
-       },
+       }
+      },
+
        deleteCertification(id){
           if(confirm("Are you sure you want to delete this certification?")){
           $id = $_POST['Certification_ID'];
           $query_string = "delete from $Certifications where Certification_ID='$id'";
           $result = mysql_query($result);
           return false;
-        } 
+        }
+      }
     }
 
 
