@@ -170,6 +170,7 @@ var app = new Vue({
          return false;
        }
       },
+      //  Delete API from https://makitweb.com/insert-update-delete-records-from-mysql-with-vue-js/
 
        deleteCertification(id){
           if(confirm("Are you sure you want to delete this certification?")){

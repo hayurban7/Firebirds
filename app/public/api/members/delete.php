@@ -1,6 +1,5 @@
 <?php
-/* Attempt MySQL server connection. Assuming you are running MySQL
-server with default setting (user 'root' with no password) */
+// DELETE PHP FROM https://makitweb.com/insert-update-delete-records-from-mysql-with-vue-js/
 $db = DbConnection::getConnection();
 
 // Update record
