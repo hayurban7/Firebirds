@@ -47,9 +47,9 @@ CREATE TABLE Certifications
 
              (Certification_ID  INT NOT NULL Primary key auto_increment,
 
-	      Certificate_Name    VARCHAR(30)    NOT NULL,
+	            Certificate_Name    VARCHAR(30)    NOT NULL,
 
-          Exp_period INT
+              Exp_period INT
 );
 INSERT INTO Certifications VALUES (1,"CPR (CPR for Healthcare Providers/American Heart Association)", 2);
 INSERT INTO Certifications VALUES (2,"CPR (CPR for the Professional Rescuer/American Red Cross)", 2);
