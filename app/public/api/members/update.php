@@ -44,15 +44,8 @@ if($request == 3){
       $_POST['IsActive'],
       ]);
 
-   
-  echo "Update successfully";
-  exit;
-  mysqli_query($con,"UPDATE Certifications SET
-    Certification_ID='".$Certification_ID."',
-    Certificate_Name='".$Certificate_Name."',
-    Exp_period='".$Exp_period."'
-    WHERE Certification_ID=".$id);
+   $Member_ID = $_POST['Member_ID']
+    header('HTTP/1.1 303 See Other');
+    header('Location: ../api/members/?Member_ID=' .$Member_ID)
 
-  echo "Updated successfully";
 
-}
