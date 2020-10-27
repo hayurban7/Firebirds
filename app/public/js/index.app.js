@@ -225,10 +225,10 @@ var app = new Vue({
       //   });
       // },
       deleteCertification(evt) {//Certification - Hayley - post new certification form
-        console.log(this.Certification_ID)
+        console.log(this.cert)
         fetch('api/certifications/delete.php', {
           method:'POST',
-          body: JSON.stringify(this.Certification_ID),
+          body: JSON.stringify(this.cert),
           //Certification_ID: this.cert.Certification_ID,
           headers: {
             "Content-Type": "application/json; charset=utf-8"
