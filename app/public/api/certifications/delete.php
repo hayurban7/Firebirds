@@ -18,12 +18,17 @@ $db = DbConnection::getConnection();
 //   echo "Updated successfully";
 //   exit;
 // }
-$Certification_ID = $_GET['Certification_ID'];
-$sql = "DELETE FROM Certifications WHERE Certificate_Name = '$Certification_ID'";
+$sql = 'SELECT * FROM Certifications';
+$vars = [];
+
+if (isset($_GET['Certification_ID'])){
+  $sql = "DELETE FROM Certifications WHERE Certificate_ID = ?";
+  $vars = [ $_POST['Certification_ID'] ];
+}
 //$vars = [ $_GET['Certification_ID'] ];
 
 $stmt = $db->prepare($sql);
-$stmt->execute($Certification_ID);
+$stmt->execute($vars);
 // Delete record
 // if ($db->query($stmt) === TRUE) {
 //   echo "Record deleted successfully";
@@ -34,3 +39,7 @@ $stmt->execute($Certification_ID);
 //   $Certification_ID = $data->Certification_ID;
 
   // mysqli_query($con,"DELETE FROM Certifications WHERE Certification_ID=".$Certification_ID);
+
+
+  header('HTTP/1.1 303 See Other');
+  header('Location: ../certifications/');

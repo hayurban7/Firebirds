@@ -226,10 +226,13 @@ var app = new Vue({
       deleteRecord(Certification_ID) {//Certification - Hayley - post new certification form
         fetch('api/certifications/delete.php', {
           method:'POST',
-          body: JSON.stringify(this.cert),
+          body: JSON.stringify(this.cert.Certification_ID),
+          //Certification_ID: this.cert.Certification_ID,
           headers: {
             "Content-Type": "application/json; charset=utf-8"
-          }
+          },
+          // this:cert = this.cert.filter((obj) => {
+          //   return obj.id !== Certification_ID;
         })
         .then( response => response.json() )
         .then( json => {
@@ -238,7 +241,6 @@ var app = new Vue({
           this.cert=json; 
           //this.cert = this.fetchCert();
         });
-
         console.log("Deleting (POSTing)...!");
         // console.log(this.cert);
 
