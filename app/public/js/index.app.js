@@ -183,47 +183,66 @@ var app = new Vue({
       // }
       updateRecord: function(index,Certification_ID){
 
-  // Read value from Textbox maybe this.cert instead
+      // Read value from Textbox maybe this.cert instead
         var Certificate_Name = this.cert[index].Certificate_Name;
         var Exp_period = this.cert[index].Exp_period;
 
-  if(Certificate_Name !=''){
-    axios.post('api/certifcations/delete.php', {
-      request: 3,
-      Certification_ID: Certification_ID,
-      Certificate_Name: Certificate_Name,
-      Exp_period: Exp_period
-    })
-    .then(function (response) {
-      alert(response.data);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  }
-},
-deleteRecord: function(index,Certification_ID){
+        if(Certificate_Name !=''){
+          axios.post('api/certifcations/delete.php', {
+            request: 3,
+            Certification_ID: Certification_ID,
+            Certificate_Name: Certificate_Name,
+            Exp_period: Exp_period
+          })
+          .then(function (response) {
+            alert(response.data);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+        }
+      },
+      // deleteRecord: function(Certification_ID){
 
-  fetch('api/certifications/delete.php', {
-    method:'POST',
-    // body: JSON.stringify(this.cert),
-    headers: {
-      "Content-Type": "application/json; charset=utf-8"
-    },
-    request: 4,
-    Certification_ID: Certification_ID
-  })
-  .then(function (response) {
+      //   fetch('api/certifications/delete.php', {
+      //     method:'POST',
+      //     // body: JSON.stringify(this.cert),
+      //     headers: {
+      //       "Content-Type": "application/json; charset=utf-8"
+      //     },
+      //   })
+      //   .then(function (response) {
 
-    // Remove index from users
-    app.cert.splice(index, 1);
-    alert(response.data);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+      //     // Remove index from users
+      //     app.cert.splice(index, 1);
+      //     alert(response.data);
+      //   })
+      //   .catch(function (error) {
+      //     console.log(error);
+      //   });
+      // },
+      deleteRecord(Certification_ID) {//Certification - Hayley - post new certification form
+        fetch('api/certifications/delete.php', {
+          method:'POST',
+          body: JSON.stringify(this.cert),
+          headers: {
+            "Content-Type": "application/json; charset=utf-8"
+          }
+        })
+        .then( response => response.json() )
+        .then( json => {
+          console.log("Returned from post:", json);
+          // TODO: test a result was returned!
+          this.cert=json; 
+          this.cert = this.newCertData();
+        });
+
+        console.log("Deleting (POSTing)...!");
+        // console.log(this.cert);
+
+
+      },
+
+
     }
-
-
-  }
   })

@@ -5,9 +5,9 @@ $db = DbConnection::getConnection();
 
 // Update record
 // if($request == 3){
-  $Certification_ID = $cert->Certification_ID;
-  $Certificate_Name = $cert->Certificate_Name;
-  $Exp_period = $cert->Exp_period;
+  // $Certification_ID = $cert->Certification_ID;
+  // $Certificate_Name = $cert->Certificate_Name;
+  // $Exp_period = $cert->Exp_period;
 //
 //   mysqli_query($con,"UPDATE Certifications SET
 //     Certification_ID='".$Certification_ID."',
@@ -18,13 +18,19 @@ $db = DbConnection::getConnection();
 //   echo "Updated successfully";
 //   exit;
 // }
-$stmt = $db->prepare(
-  "DELETE FROM Certifications WHERE Certification_ID=".$Certification_ID);
+$Certification_ID = $_GET['Certification_ID'];
+$sql = "DELETE FROM Certifications WHERE Certification_ID = '$Certification_ID'";
+//$vars = [ $_GET['Certification_ID'] ];
+
+$stmt = $db->prepare($sql);
+$stmt->execute($Certification_ID);
 // Delete record
+// if ($db->query($stmt) === TRUE) {
+//   echo "Record deleted successfully";
+// } else {
+//   echo "Error deleting record: " . $conn->error;
+// }
 // if($request == 4){
 //   $Certification_ID = $data->Certification_ID;
 
   // mysqli_query($con,"DELETE FROM Certifications WHERE Certification_ID=".$Certification_ID);
-
-  echo "Deleted successfully";
-  exit;
