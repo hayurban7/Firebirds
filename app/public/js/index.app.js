@@ -227,7 +227,7 @@ var app = new Vue({
         console.log(this.cert)
         fetch('api/certifications/delete.php', {
           method:'POST',
-          body: JSON.stringify(this.cert),
+          body: JSON.stringify(this.certification_ID),
           //Certification_ID: this.cert.Certification_ID,
           headers: {
             "Content-Type": "application/json; charset=utf-8"
