@@ -346,6 +346,10 @@ th[role=columnheader]:not(.no-sort):hover:after {
     font-size: 18px;
     color: #ffffff;
   }
+
+  img{
+    align-content: center;
+  }
   
   input[type="text"] {
       padding: 2px 2px 4px 4px;
