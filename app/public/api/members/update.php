@@ -13,8 +13,8 @@ if($request == 3){
     Certification_ID='".$Certification_ID."',
     Certificate_Name='".$Certificate_Name."',
     Exp_period='".$Exp_period."'
-    ""WHERE Certification_ID=".$id);
+    WHERE Certification_ID=".$id);
 
   echo "Updated successfully";
-  exit;
+
 }
