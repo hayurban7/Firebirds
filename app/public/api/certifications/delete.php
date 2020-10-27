@@ -1,5 +1,5 @@
 <?php
-// DELETE PHP FROM https://makitweb.com/insert-update-delete-records-from-mysql-with-vue-js/
+
 require 'common.php';
 $db = DbConnection::getConnection();
 
