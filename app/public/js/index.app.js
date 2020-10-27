@@ -39,7 +39,9 @@ var app = new Vue({
       newCert:{
           Certificate_Name:"",
           Exp_period:""
-        }
+        },
+      activeCert: null, // DELETE Madison 
+
       //memberList: [],//Member - Madison
       //certList: [], //Certifications - Hayley
       // activeMember: null,

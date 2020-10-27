@@ -19,7 +19,7 @@ $db = DbConnection::getConnection();
 //   exit;
 // }
 $Certification_ID = $_GET['Certification_ID'];
-$sql = "DELETE FROM Certifications WHERE Certification_ID = '$Certification_ID'";
+$sql = "DELETE FROM Certifications WHERE Certificate_Name = '$Certification_ID'";
 //$vars = [ $_GET['Certification_ID'] ];
 
 $stmt = $db->prepare($sql);
