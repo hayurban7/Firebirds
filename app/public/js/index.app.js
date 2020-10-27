@@ -33,11 +33,9 @@ var app = new Vue({
         },
 
       cert:[{
-          Certification_ID:"",
           Certificate_Name:"",
           Exp_period:""
         }],
-      
       newCert:{
           Certificate_Name:"",
           Exp_period:""
@@ -226,10 +224,10 @@ var app = new Vue({
       //   });
       // },
       deleteCertification(evt) {//Certification - Hayley - post new certification form
-        console.log(this.Certification_ID)
+        console.log(this.cert)
         fetch('api/certifications/delete.php', {
           method:'POST',
-          body: JSON.stringify(this.Certification_ID),
+          body: JSON.stringify(this.cert),
           //Certification_ID: this.cert.Certification_ID,
           headers: {
             "Content-Type": "application/json; charset=utf-8"
@@ -238,7 +236,19 @@ var app = new Vue({
           //   return obj.id !== Certification_ID;
         })
         console.log("Deleting (POSTing)...!");
-   
+      },
+     deleteMember(evt) {
+        console.log(this.Member_ID)
+        fetch('api/members/delete.php', {
+          method:'POST',
+          body: JSON.stringify(this.Member_ID),
+          headers: {
+            "Content-Type": "application/json; charset=utf-8"
+          }
+          
+        })
+        console.log("Deleting (POSTing)...!");
+      }
         // .then( response => response.json() )
         // .then( json => {
         //   console.log("Returned from post:", json);
@@ -250,7 +260,7 @@ var app = new Vue({
         // // console.log(this.cert);
 
 
-      },
+      
 
 
     }
