@@ -236,7 +236,7 @@ var app = new Vue({
           console.log("Returned from post:", json);
           // TODO: test a result was returned!
           this.cert=json; 
-          this.cert = this.newCertData();
+          //this.cert = this.fetchCert();
         });
 
         console.log("Deleting (POSTing)...!");
