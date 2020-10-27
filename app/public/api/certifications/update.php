@@ -22,8 +22,8 @@ if($request == 3){
     Secondary_Phone='".$Secondary_Phone."',
     Radio='".$Radio."',
     Station='".$Station."',
-    IsActive='".$IsActive."
-    WHERE Member_ID='.$id'");
+    IsActive='".$IsActive."'
+    WHERE Member_ID=".$id);
 
   echo "Update successfully";
-  exit;
+}
