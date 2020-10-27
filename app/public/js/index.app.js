@@ -33,7 +33,6 @@ var app = new Vue({
         },
 
       cert:[{
-          Certification_ID:"",
           Certificate_Name:"",
           Exp_period:""
         }],
