@@ -27,6 +27,7 @@ if($request == 3){
     IsActive='".$IsActive."
     WHERE Member_ID='.$id'");
 
+<<<<<<< HEAD
     $stmt->execute([
       $_POST['Member_ID'],
       $_POST['First_Name'],
@@ -47,3 +48,14 @@ if($request == 3){
    
   echo "Update successfully";
   exit;
+=======
+  mysqli_query($con,"UPDATE Certifications SET
+    Certification_ID='".$Certification_ID."',
+    Certificate_Name='".$Certificate_Name."',
+    Exp_period='".$Exp_period."'
+    WHERE Certification_ID=".$id);
+
+  echo "Updated successfully";
+
+}
+>>>>>>> 1ce7bda9058b4add3ba35cd67592d41a228d80fb

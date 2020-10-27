@@ -69,7 +69,7 @@
 		                        <table>
 		                            <tr class="cert" v-for="cert in cert">
 		                                <td>{{cert.Certificate_Name}}</td>
-		                                <td><input type='button' value='Delete' v-on:click='deleteCertification(Certification_ID)'></td>
+		                                <td><input type='button' value='Delete' v-on:click='deleteCertification(cert.Certification_ID)'></td>
 		                                <td><a href="certdetails.html">Details</a></td>
 		                            </tr>
 		                        </table>
