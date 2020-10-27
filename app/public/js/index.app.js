@@ -183,27 +183,27 @@ var app = new Vue({
       //     return false;
       //   }
       // }
-      updateRecord: function(index,Certification_ID){
+      // updateRecord: function(index,Certification_ID){
 
-      // Read value from Textbox maybe this.cert instead
-        var Certificate_Name = this.cert[index].Certificate_Name;
-        var Exp_period = this.cert[index].Exp_period;
+      // // Read value from Textbox maybe this.cert instead
+      //   var Certificate_Name = this.cert[index].Certificate_Name;
+      //   var Exp_period = this.cert[index].Exp_period;
 
-        if(Certificate_Name !=''){
-          axios.post('api/certifcations/delete.php', {
-            request: 3,
-            Certification_ID: Certification_ID,
-            Certificate_Name: Certificate_Name,
-            Exp_period: Exp_period
-          })
-          .then(function (response) {
-            alert(response.data);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-        }
-      },
+      //   if(Certificate_Name !=''){
+      //     axios.post('api/certifcations/delete.php', {
+      //       request: 3,
+      //       Certification_ID: Certification_ID,
+      //       Certificate_Name: Certificate_Name,
+      //       Exp_period: Exp_period
+      //     })
+      //     .then(function (response) {
+      //       alert(response.data);
+      //     })
+      //     .catch(function (error) {
+      //       console.log(error);
+      //     });
+      //   }
+      // },
       // deleteRecord: function(Certification_ID){
 
       //   fetch('api/certifications/delete.php', {
@@ -223,10 +223,11 @@ var app = new Vue({
       //     console.log(error);
       //   });
       // },
-      deleteRecord(Certification_ID) {//Certification - Hayley - post new certification form
+      deleteCertification(evt) {//Certification - Hayley - post new certification form
+        console.log(this.Certification_ID)
         fetch('api/certifications/delete.php', {
           method:'POST',
-          body: JSON.stringify(this.cert.Certification_ID),
+          body: JSON.stringify(this.Certification_ID),
           //Certification_ID: this.cert.Certification_ID,
           headers: {
             "Content-Type": "application/json; charset=utf-8"
@@ -234,15 +235,17 @@ var app = new Vue({
           // this:cert = this.cert.filter((obj) => {
           //   return obj.id !== Certification_ID;
         })
-        .then( response => response.json() )
-        .then( json => {
-          console.log("Returned from post:", json);
-          // TODO: test a result was returned!
-          this.cert=json; 
-          //this.cert = this.fetchCert();
-        });
         console.log("Deleting (POSTing)...!");
-        // console.log(this.cert);
+   
+        // .then( response => response.json() )
+        // .then( json => {
+        //   console.log("Returned from post:", json);
+        //   // TODO: test a result was returned!
+        //   this.cert=json; 
+        //   //this.cert = this.fetchCert();
+        // });
+        // console.log("Deleting (POSTing)...!");
+        // // console.log(this.cert);
 
 
       },
