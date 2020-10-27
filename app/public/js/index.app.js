@@ -37,7 +37,6 @@ var app = new Vue({
           Certificate_Name:"",
           Exp_period:""
         }],
-      
       newCert:{
           Certificate_Name:"",
           Exp_period:""
@@ -236,6 +235,17 @@ var app = new Vue({
           },
           // this:cert = this.cert.filter((obj) => {
           //   return obj.id !== Certification_ID;
+        })
+        console.log("Deleting (POSTing)...!");
+
+     deleteMember(evt) {//Member - Hayley - post new certification form
+        console.log(this.Member_ID)
+        fetch('api/members/delete.php', {
+          method:'POST',
+          body: JSON.stringify(this.Member_ID),
+          headers: {
+            "Content-Type": "application/json; charset=utf-8"
+          },
         })
         console.log("Deleting (POSTing)...!");
    
