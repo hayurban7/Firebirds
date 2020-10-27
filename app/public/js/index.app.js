@@ -236,18 +236,19 @@ var app = new Vue({
           //   return obj.id !== Certification_ID;
         })
         console.log("Deleting (POSTing)...!");
-
-     deleteMember(evt) {//Member - Hayley - post new certification form
+      },
+     deleteMember(evt) {
         console.log(this.Member_ID)
         fetch('api/members/delete.php', {
           method:'POST',
           body: JSON.stringify(this.Member_ID),
           headers: {
             "Content-Type": "application/json; charset=utf-8"
-          },
+          }
+          
         })
         console.log("Deleting (POSTing)...!");
-   
+      }
         // .then( response => response.json() )
         // .then( json => {
         //   console.log("Returned from post:", json);
@@ -259,7 +260,7 @@ var app = new Vue({
         // // console.log(this.cert);
 
 
-      },
+      
 
 
     }
