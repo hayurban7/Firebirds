@@ -245,31 +245,24 @@ var app = new Vue({
         });
         console.log("Deleting (POSTing)...!");
       },
-     deleteMember(evt) {
-        console.log(this.Member_ID)
-        fetch('api/members/delete.php', {
-          method:'POST',
-          body: JSON.stringify(this.Member_ID),
-          headers: {
-            "Content-Type": "application/json; charset=utf-8"
-          }
-
-        })
-        console.log("Deleting (POSTing)...!");
-      }
-        // .then( response => response.json() )
-        // .then( json => {
-        //   console.log("Returned from post:", json);
-        //   // TODO: test a result was returned!
-        //   this.cert=json;
-        //   //this.cert = this.fetchCert();
-        // });
-        // console.log("Deleting (POSTing)...!");
-        // // console.log(this.cert);
-
-
-
-
+     deleteMember(mid) {
+      console.log(mid);
+      fetch('api/members/delete.php', {
+        method:'POST',
+        body: JSON.stringify({
+          "Member_ID": mid
+        }),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      })
+      .then( response => response.json() )
+      .then( json => {
+        console.log("Returned from post:", json);
+        this.members=json; //Maybe no zero
+      });
+      console.log("Deleting (POSTing)...!");
+    },
 
     }
   })
