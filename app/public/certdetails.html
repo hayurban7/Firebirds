@@ -60,8 +60,8 @@
             <div class="container" id="firefighter">
                 <section>
                     <div class="icon"><i class="fab fa-pagelines fa-3x"></i></div>
-					<h2>{{Certificate_Name}}</h2>
-					<div v-for="member in members"></div>
+					<h2>Certification</h2>
+					<div >
                         <table>
                             <thead>
                             <tr>
@@ -70,13 +70,35 @@
                                 <th>Expired Members</th>
                             </tr>
                         </thead>
-                            <tr>
+                            <tr v-for="member in members">
                                 <td>{{member.First_Name}} {{member.Last_Name}}</td>
-                                <td>{{member.First_Name}} {{member.Last_Name}}</td>
+								<td>{{member.First_Name}} {{member.Last_Name}}</td>
+								<!-- <td><button type="submit">Update</button></td> -->
                             </tr>
                         </table>
-                        <button type="submit">Update</button>
-                </section>
+					</div>
+				</section>
+				<section>
+					<div class="icon"><i class="fas fa-coffee fa-3x"></i></div>
+					<h2>Edit Certification</h2>
+					<p>
+						<div class="cert">
+						<form v-on:submit.prevent="handleCertificationForm()">
+								<div class="form-group">
+									<label for="Name">Certification Name:</label> &nbsp;
+									<input type="text" id="Name" v-bind:value="activeCert.activeCertificate_Name">
+									<br>
+								</div>
+								<div class="form-group">
+									<label for="Year">Expiration Period:</label> &nbsp;
+									<input type="text" id="Year" vv-bind:value="activeCert.activeExp_period">
+									<br>
+								</div>
+							<button type="submit" value="Create Certificate" class="btn btn-primary">Create</button>
+						</form>
+						</div>
+					</p>
+				</section>
 
             </div>
         </article>

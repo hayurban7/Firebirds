@@ -40,7 +40,19 @@ var app = new Vue({
           Certificate_Name:"",
           Exp_period:""
         },
-      activeCert: null, // DELETE Madison
+      activeCert:[{
+        activeCertification_ID:"",
+        activeCertificate_Name:"",
+        activeExp_period:""
+      }],
+      // computed: {
+      //     activeCertID() {
+      //       return this.activeCert ? this.activeCert.Certification_ID:''},
+      //     activeCertName() {
+      //       return this.activeCert ? this.activeCert.Certificate_Name:''},
+      //     activeCertEP() {
+      //       return this.activeCert ? this.activeCert.Exp_period:''}
+      //   }, 
 
       //memberList: [],//Member - Madison
       //certList: [], //Certifications - Hayley
@@ -137,7 +149,10 @@ var app = new Vue({
           // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
 
           // TODO: Validate the data!
-
+          if (this.activeCert) {
+            this.CertificationForm.Certification_ID = this.activeCert.Certification_ID;
+          }
+          
           fetch('api/certifications/post.php', {
             method:'POST',
             body: JSON.stringify(this.newCert),
@@ -164,6 +179,11 @@ var app = new Vue({
             Exp_period:""
           }
         },
+      editCert(){
+        this.Certification_ID = this.activeCertification_ID,
+        this.Certificate_Name = this.activeCertificate_Name,
+        this.Exp_period = this.activeExp_period
+      },
       // deleteMember(Member_ID){
       //    if(confirm("Are you sure you want to delete this member?")){
       //    $Member_ID = $_POST['Member_ID'];
