@@ -47,7 +47,7 @@ CREATE TABLE Certifications
 
              (Certification_ID  INT NOT NULL Primary key auto_increment,
 
-	            Certificate_Name    VARCHAR(30)    NOT NULL,
+	            Certificate_Name    VARCHAR(100)    NOT NULL,
 
               Exp_period INT
 );
