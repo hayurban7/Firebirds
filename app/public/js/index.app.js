@@ -127,7 +127,7 @@ var app = new Vue({
           
           fetch('api/certifications/update.php', {
             method:'POST',
-            body: JSON.stringify(this.newCert),
+            body: JSON.stringify(this.activeCert),
             headers: {
               "Content-Type": "application/json; charset=utf-8"
             }
@@ -136,12 +136,12 @@ var app = new Vue({
           .then( json => {
             console.log("Returned from post:", json);
             // TODO: test a result was returned!
-            this.cert=json; //Maybe no zero
-            this.newCert = this.newCertData();
+            this.activeCert=json; //Maybe no zero
+            //this.newCert = this.newCertData();
           });
 
           console.log("Creating (POSTing)...!");
-          console.log(this.newCert);
+          console.log(this.activeCert);
 
 
         },
