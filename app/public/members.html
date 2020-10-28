@@ -67,7 +67,7 @@
                             <tbody>
                                 <tr class="members" v-for="member in members">
                                     <td>{{member.First_Name}} {{member.Last_Name}}</td>
-                                    <td><input type='button' value='Delete' @click='deleteRecord(member.Member_ID)'></td>
+                                    <td><input type='button' value='Delete' v-on:click='deleteMember(member.Member_ID)'></td>
                                     <td><a href="memdetails.html">Details</a></td>
                                 </tr>
                             </tbody>
