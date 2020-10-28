@@ -147,6 +147,29 @@ var app = new Vue({
 
         },
 
+        handleMemberEdit() {
+
+            fetch('api/members/update.php', {
+              method:'POST',
+              body: JSON.stringify(this.activeMember),
+              headers: {
+                "Content-Type": "application/json; charset=utf-8"
+                }
+              })
+              .then( response => response.json() )
+              .then( json => {
+                console.log("Returned from post:", json);
+                // TODO: test a result was returned!
+                this.activeMember=json; //Maybe no zero
+                //this.newCert = this.newCertData();
+              });
+
+              console.log("Updating (POSTing)...!");
+              console.log(this.activeMember);
+
+
+            },
+
       deleteCertification(cid) {//Certification - Hayley - post new certification form
         console.log(cid);
         fetch('api/certifications/delete.php', {
@@ -178,29 +201,8 @@ var app = new Vue({
         }),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
-        },
-      handleMemberEdit() {
+        }
 
-          fetch('api/members/update.php', {
-            method:'POST',
-            body: JSON.stringify(this.activeMember),
-            headers: {
-              "Content-Type": "application/json; charset=utf-8"
-              }
-            })
-            .then( response => response.json() )
-            .then( json => {
-              console.log("Returned from post:", json);
-              // TODO: test a result was returned!
-              this.activeMember=json; //Maybe no zero
-              //this.newCert = this.newCertData();
-            });
-
-            console.log("Updating (POSTing)...!");
-            console.log(this.activeMember);
-
-
-          }
       })
       .then( response => response.json() )
       .then( json => {
