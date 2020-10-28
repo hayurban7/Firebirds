@@ -40,7 +40,7 @@ var app = new Vue({
           Certificate_Name:"",
           Exp_period:""
         },
-      activeCert: null, // DELETE Madison 
+      activeCert: null, // DELETE Madison
 
       //memberList: [],//Member - Madison
       //certList: [], //Certifications - Hayley
@@ -223,18 +223,26 @@ var app = new Vue({
       //     console.log(error);
       //   });
       // },
-      deleteCertification(evt) {//Certification - Hayley - post new certification form
-        console.log(this.cert)
+      deleteCertification(cid) {//Certification - Hayley - post new certification form
+        console.log(cid);
         fetch('api/certifications/delete.php', {
           method:'POST',
-          body: JSON.stringify(this.certification_ID),
+          body: JSON.stringify({
+            "Certification_ID": cid
+          }),
           //Certification_ID: this.cert.Certification_ID,
           headers: {
             "Content-Type": "application/json; charset=utf-8"
-          },
+          }
           // this:cert = this.cert.filter((obj) => {
           //   return obj.id !== Certification_ID;
         })
+        .then( response => response.json() )
+        .then( json => {
+          console.log("Returned from post:", json);
+          // TODO: test a result was returned!
+          this.cert=json; //Maybe no zero
+        });
         console.log("Deleting (POSTing)...!");
       },
      deleteMember(evt) {
@@ -245,7 +253,7 @@ var app = new Vue({
           headers: {
             "Content-Type": "application/json; charset=utf-8"
           }
-          
+
         })
         console.log("Deleting (POSTing)...!");
       }
@@ -253,14 +261,14 @@ var app = new Vue({
         // .then( json => {
         //   console.log("Returned from post:", json);
         //   // TODO: test a result was returned!
-        //   this.cert=json; 
+        //   this.cert=json;
         //   //this.cert = this.fetchCert();
         // });
         // console.log("Deleting (POSTing)...!");
         // // console.log(this.cert);
 
 
-      
+
 
 
     }

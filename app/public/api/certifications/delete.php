@@ -11,3 +11,5 @@ $stmt = $db->prepare(
 $stmt->execute([
 $_POST['Certification_ID'],
 ]);
+header('HTTP/1.1 303 See Other');
+header('Location: ../certifications/');
