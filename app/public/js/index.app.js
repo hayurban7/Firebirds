@@ -178,7 +178,7 @@ var app = new Vue({
         headers: {
           "Content-Type": "application/json; charset=utf-8"
         },
-      handleCertificationEdit() {
+      handleMemberEdit() {
 
           fetch('api/members/update.php', {
             method:'POST',
