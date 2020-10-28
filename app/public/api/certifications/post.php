@@ -12,12 +12,11 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'INSERT INTO Certifications (Certification_ID, Certificate_Name, Exp_period)
-  VALUES (?, ?, ?)'
+  'INSERT INTO Certifications (Certificate_Name, Exp_period)
+  VALUES (?, ?)'
 );
 // might not end up needing all fields (this lists all from member table)
 $stmt->execute([
-  $_POST['Certification_ID']
   $_POST['Certificate_Name'],
   $_POST['Exp_period']
 ]);

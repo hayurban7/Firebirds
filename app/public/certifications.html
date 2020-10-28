@@ -70,13 +70,35 @@
 		                            <tr class="cert" v-for="cert in cert">
 		                                <td>{{cert.Certificate_Name}}</td>
 		                                <td><input type='button' value='Delete' v-on:click='deleteCertification(cert.Certification_ID)'></td>
-		                                <td><a href="certdetails.html" v-on:click="editCert()">Details</a></td>
+		                                <td><a href="#" v-on:click.prevent="activeCert = cert">Details</a></td>
 		                            </tr>
 		                        </table>
 		                    </p>
 		                </div>
 					</section>
 
+			<section v-if="activeCert">
+				<div class="icon"><i class="fas fa-coffee fa-3x"></i></div>
+				<h2>Edit Certification</h2>
+				<p>
+					<div class="cert">
+                    <form v-on:submit.prevent="handleCertificationEdit()">
+							<div class="form-group">
+								<label for="Name">Certification Name:</label> &nbsp;
+								<input type="text" id="Name" v-model="activeCert.Certificate_Name">
+								<br>
+							</div>
+							<div class="form-group">
+								<label for="Year">Expiration Period:</label> &nbsp;
+								<input type="text" id="Year" v-model="activeCert.Exp_period">
+								<br>
+							</div>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+					</form>
+					</div>
+
+                </p>
+			</section>
 			<section>
 				<div class="icon"><i class="fas fa-coffee fa-3x"></i></div>
 				<h2>Add Certification</h2>
@@ -96,6 +118,7 @@
                         <button type="submit" value="Create Certificate" class="btn btn-primary">Create</button>
 					</form>
 					</div>
+					
                 </p>
 			</section>
 		</div>

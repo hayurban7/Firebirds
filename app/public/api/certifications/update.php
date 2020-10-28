@@ -1,29 +1,34 @@
 <?php
 
 require 'common.php';
+
+// Step 0: Validate the incoming data
+// This code doesn't do that, but should ...
+// For example, if the date is empty or bad, this insert fails.
+
+// Step 1: Get a datase connection from our helper class
 $db = DbConnection::getConnection();
 
-// Update record
-if($request == 3){
-  $name = $data->name;
-  $email = $data->email;
+// Step 2: Create & run the query
+// Note the use of parameterized statements to avoid injection
+$stmt = $db->prepare(
+  "UPDATE Certifications SET
+    Certificate_Name=?,
+    Exp_period=?
+    WHERE Certification_ID=?"
+);
+// might not end up needing all fields (this lists all from member table)
+$stmt->execute([
+  $_POST['Certificate_Name'],
+  $_POST['Exp_period'],
+  $_POST['Certification_ID']
+]);
 
-  mysqli_query($con,"UPDATE Members SET
-    Member_ID='".$Member_ID."',
-    First_Name='".$First_Name."',
-    Last_Name='".$Last_Name."',
-    Title='".$Title."',
-    Gender='".$Gender."',
-    MemberStreet='".$MemberStreet."',
-    MemberCity='".$MemberCity."',
-    MemberState='".$MemberState."',
-    MemberZipCode='".$MemberZipCode."',
-    MemberPhone='".$MemberPhone."',
-    Secondary_Phone='".$Secondary_Phone."',
-    Radio='".$Radio."',
-    Station='".$Station."',
-    IsActive='".$IsActive."'
-    WHERE Member_ID=".$id);
+// If needed, get auto-generated PK from DB
+//$pk = $db->lastInsertId();  // https://www.php.net/manual/en/pdo.lastinsertid.php
 
-  echo "Update successfully";
-}
+// Step 4: Output
+// Here, instead of giving output, I'm redirecting to the SELECT API,
+// just in case the data changed by entering it
+header('HTTP/1.1 303 See Other');
+header('Location: ../certifications/');
