@@ -24,6 +24,7 @@ var app = new Vue({
           Exp_period:""
         },
       activeCert:null,
+      activeMember:null
 
     },
     created() {
