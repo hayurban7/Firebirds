@@ -24,7 +24,7 @@ var app = new Vue({
           Exp_period:""
         },
       activeCert:null,
-    
+
     },
     created() {
 
@@ -95,8 +95,8 @@ var app = new Vue({
           // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
 
           // TODO: Validate the data!
-        
-          
+
+
           fetch('api/certifications/post.php', {
             method:'POST',
             body: JSON.stringify(this.newCert),
@@ -124,7 +124,7 @@ var app = new Vue({
           }
         },
       handleCertificationEdit() {
-          
+
           fetch('api/certifications/update.php', {
             method:'POST',
             body: JSON.stringify(this.activeCert),
@@ -140,12 +140,12 @@ var app = new Vue({
             //this.newCert = this.newCertData();
           });
 
-          console.log("Creating (POSTing)...!");
+          console.log("Updating (POSTing)...!");
           console.log(this.activeCert);
 
 
         },
-    
+
       deleteCertification(cid) {//Certification - Hayley - post new certification form
         console.log(cid);
         fetch('api/certifications/delete.php', {
@@ -177,7 +177,29 @@ var app = new Vue({
         }),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
-        }
+        },
+      handleCertificationEdit() {
+
+          fetch('api/members/update.php', {
+            method:'POST',
+            body: JSON.stringify(this.activeMember),
+            headers: {
+              "Content-Type": "application/json; charset=utf-8"
+              }
+            })
+            .then( response => response.json() )
+            .then( json => {
+              console.log("Returned from post:", json);
+              // TODO: test a result was returned!
+              this.activeMember=json; //Maybe no zero
+              //this.newCert = this.newCertData();
+            });
+
+            console.log("Updating (POSTing)...!");
+            console.log(this.activeMember);
+
+
+          }
       })
       .then( response => response.json() )
       .then( json => {
