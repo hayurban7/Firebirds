@@ -70,7 +70,7 @@
 		                            <tr class="cert" v-for="cert in cert">
 		                                <td>{{cert.Certificate_Name}}</td>
 		                                <td><input type='button' value='Delete' v-on:click='deleteCertification(cert.Certification_ID)'></td>
-		                                <td><a href="#" v-on:click.prevent="activeCert = cert">Details</a></td>
+		                                <td><input type='button' value='Edit'  v-on:click.prevent="activeCert = cert"></input></td>
 		                            </tr>
 		                        </table>
 		                    </p>
