@@ -224,14 +224,15 @@
                         <!-- <div class="dropdown">
                             <button onclick="myFunction()" class="dropbtn">Filter by Certification
                             </button>
-                            <div  id="myDropdown" class="dropdown-content">
-                              <a>CPR (American Heart)</a>
-                              <a>CPR (American Red Cross)</a>
-                              <a>Firefighter I (Athens Technical College)</a>
-                              <a>Firefighter I (Ivy Technical College)</a>
-                              <a>POST (Georgia POST Academt)</a>
+                            <div  id="myDropdown" class="dropdown-content" v-for="cert in cert">
+                              <a></a>
                             </div>
                         </div> -->
+                        <label for="cars">Choose certification:</label> 
+                        <!-- need to do an onclick set active cert  -->
+                        <select name="Certificate_Name" >
+                            <option value="cert.Certificate_Name" v-for="cert in cert">{{cert.Certificate_Name}}</option>
+                        </select>
                 </p>
                 <table>
                     <tbody>
