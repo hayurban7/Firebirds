@@ -25,7 +25,9 @@ var app = new Vue({
         },
       activeCert:null,
       activeMember:null,
-      certMem:[]
+      certMem:[],
+      //activeCertMember:null,
+      certDetails:[]
 
     },
     created() {
@@ -58,6 +60,38 @@ var app = new Vue({
               this.certMem=json;
               console.log(this.certMem);
           });
+        },
+        // fetchCertDetials(){
+        //   fetch('api/certifications/certDetails.php')
+        //   .then(response => response.json())
+        //   .then(json => {
+        //       this.certDetails=json;
+        //       console.log(this.certDetails);
+        //   });
+        // },
+        detailsCertification(cid) {
+
+          fetch('api/certifications/certDetails.php', {
+            method:'POST',
+            body: JSON.stringify({
+              "Certification_ID": cid
+            }),
+            headers: {
+              "Content-Type": "application/json; charset=utf-8"
+            }
+          })
+          .then( response => response.json() )
+          .then( json => {
+            console.log("Returned from post:", json);
+            // TODO: test a result was returned!
+            this.activeCert=json; //Maybe no zero
+            //this.newCert = this.newCertData();
+          });
+
+          console.log("Updating (POSTing)...!");
+          console.log(this.certDetails);
+
+
         },
 
       handleNewMemberForm() {//Member - Madison - post new member form
@@ -179,7 +213,7 @@ var app = new Vue({
 
 
             },
-
+      
       deleteCertification(cid) {//Certification - Hayley - post new certification form
         console.log(cid);
         fetch('api/certifications/delete.php', {

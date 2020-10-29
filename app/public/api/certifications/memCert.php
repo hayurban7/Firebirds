@@ -6,7 +6,7 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT  M.First_Name, M.Last_Name, C.Certificate_Name, CD.Exp_Date FROM Members M, Certifications C, Certification_Details CD WHERE M.Member_ID = CD.Member_ID and C.Certification_ID =CD.Certification_ID AND CD.Exp_Date < DATE(NOW())
+$sql = 'SELECT  M.First_Name, M.Last_Name, C.Certificate_Name, CD.Exp_Date FROM Members M, Certifications C, Certification_Details CD WHERE  M.Member_ID = CD.Member_ID and C.Certification_ID =CD.Certification_ID AND CD.Exp_Date < DATE(NOW())
 ';
 $vars = [];
 
