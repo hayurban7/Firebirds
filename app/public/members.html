@@ -221,7 +221,7 @@
 				<div class="icon"><i class="fas fa-coffee fa-3x"></i></div>
 				<h2>Expired Member Certification</h2>
 				<p>
-                        <div class="dropdown">
+                        <!-- <div class="dropdown">
                             <button onclick="myFunction()" class="dropbtn">Filter by Certification
                             </button>
                             <div  id="myDropdown" class="dropdown-content">
@@ -231,8 +231,18 @@
                               <a>Firefighter I (Ivy Technical College)</a>
                               <a>POST (Georgia POST Academt)</a>
                             </div>
-                        </div>
+                        </div> -->
                 </p>
+                <table>
+                    <tbody>
+                        <tr class="certMember" v-for="cm in certMem">
+                            <td>{{cm.First_Name}} {{cm.Last_Name}}</td>
+                            <td>{{cm.Certificate_Name}}</td>
+                            <td>{{cm.Exp_Date}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
 			</section>
 		</div>
 	</article>

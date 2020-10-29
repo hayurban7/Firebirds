@@ -24,13 +24,15 @@ var app = new Vue({
           Exp_period:""
         },
       activeCert:null,
-      activeMember:null
+      activeMember:null,
+      certMem:[]
 
     },
     created() {
 
       this.fetchCert();
       this.fetchMember();
+      this.fetchCertMember();
     },
     methods: {
       fetchCert(){
@@ -47,6 +49,14 @@ var app = new Vue({
           .then(json => {
               this.members=json;
               console.log(this.members);
+          });
+        },
+        fetchCertMember(){
+          fetch('api/certifications/memCert.php')
+          .then(response => response.json())
+          .then(json => {
+              this.certMem=json;
+              console.log(this.certMem);
           });
         },
 
