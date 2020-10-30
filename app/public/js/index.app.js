@@ -29,6 +29,9 @@ var app = new Vue({
       certDetails:[],
       select:{
         certification:''
+      },
+      choose:{
+        member:''
       }
 
     },
