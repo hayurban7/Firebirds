@@ -55,53 +55,35 @@
 	</header>
     <!-- Form -->
     <main>
-    	<article class="highlights">
-            <h2 class="sr-only">Highlights</h2>
-            <div class="container" id="firefighter">
-                <!-- <section>
-                    <div class="icon"><i class="fab fa-pagelines fa-3x"></i></div>
-					<h2>Certificate</h2>
-					<div >
-                        <table>
-                            <thead>
-                            <tr>
+    	<div class="container" id="firefighter">
+			<section>
+				<div class="select">
+					<select v-model="select.certification">
+						<option value="">All</option>
+						<option v-for="cd in certDetails">{{cd.Certificate_Name}}</option>
+					</select>
+				</div>
+			</section>
+            <section v-if="activeCert">
+				<div class="icon"><i class="fas fa-coffee fa-3x"></i></div>
+				<h2>Certifications and Members</h2>
+				<p>
+						<!-- <div class="icon"><i class="fas fa-coffee fa-3x"></i></div> -->
+						<h2>Expired Member Certification</h2>
+						<table>
+		
+							<tbody>
+								<tr v-for="cd in certDetails" v-if="select.certification=='' || select.certification == cd.Certificate_Name">
+									<td>{{cd.First_Name}} {{cd.Last_Name}}</td>
+									<td>{{cd.Certificate_Name}}</td>
+									<td>{{cd.Exp_Date}}</td>
+								</tr>
+							</tbody>
+						</table>
 
-                                <th>Active Member Certifications</th>
-                                <th>Expired Members</th>
-                            </tr>
-                        </thead>
-                            <tr v-for="member in members">
-                                <td>{{member.First_Name}} {{member.Last_Name}}</td>
-								<td>{{member.First_Name}} {{member.Last_Name}}</td>
-								
-                            </tr>
-                        </table>
-					</div>
-				</section> -->
-				<section>
-					<div class="icon"><i class="fas fa-coffee fa-3x"></i></div>
-					<h2>Edit Certification</h2>
-					<p>
-						<div class="cert">
-						<form v-on:submit.prevent="handleCertificationForm()" >
-								<div class="form-group">
-									<label for="Name">Certification Name:</label> &nbsp;
-									<input type="text" id="Name" v-bind:value="aCertificate_Name">
-									<br>
-								</div>
-								<div class="form-group">
-									<label for="Year">Expiration Period:</label> &nbsp;
-									<input type="text" id="Year" v-bind:value="aExp_period">
-									<br>
-								</div>
-							<button type="submit" value="Create Certificate" class="btn btn-primary">Save Changes</button>
-						</form>
-						</div>
-					</p>
-				</section>
-
-            </div>
-        </article>
+                </p>
+			</section>
+		</div>
     </main>
 
 	<!-- Footer -->
