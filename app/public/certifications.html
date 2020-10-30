@@ -71,10 +71,11 @@
 		                                <td>{{cert.Certificate_Name}}</td>
 		                                <td><input type='button' value='Delete' v-on:click='deleteCertification(cert.Certification_ID)'></td>
 										<td><input type='button' value='Edit'  v-on:click.prevent="activeCert = cert"></input></td>
-										<td><input type='button' value='Details'  v-on:click="detailsCertification(cert.Certification_ID)"></input></td>
+										<!-- <td><input type='button' value='Details'  v-on:click="detailsCertification(cert.Certification_ID)" href="/certdetails.html"></input></td> -->
 		                            </tr>
 		                        </table>
-		                    </p>
+							</p>
+							<a href="certdetails.html" class="btn btn-info" role="button">Certification Details</a>
 		                </div>
 					</section>
 			<section v-if="activeCert">

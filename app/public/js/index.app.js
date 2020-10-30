@@ -26,8 +26,10 @@ var app = new Vue({
       activeCert:null,
       activeMember:null,
       certMem:[],
-      //activeCertMember:null,
-      certDetails:[]
+      certDetails:[],
+      select:{
+        certification:''
+      }
 
     },
     created() {
@@ -35,6 +37,7 @@ var app = new Vue({
       this.fetchCert();
       this.fetchMember();
       this.fetchCertMember();
+      this.fetchCertDetails();
     },
     methods: {
       fetchCert(){
@@ -61,14 +64,14 @@ var app = new Vue({
               console.log(this.certMem);
           });
         },
-        // fetchCertDetials(){
-        //   fetch('api/certifications/certDetails.php')
-        //   .then(response => response.json())
-        //   .then(json => {
-        //       this.certDetails=json;
-        //       console.log(this.certDetails);
-        //   });
-        // },
+        fetchCertDetails(){
+          fetch('api/certifications/certDetails.php')
+          .then(response => response.json())
+          .then(json => {
+              this.certDetails=json;
+              console.log(this.certDetails);
+          });
+        },
         detailsCertification(cid) {
 
           fetch('api/certifications/certDetails.php', {
