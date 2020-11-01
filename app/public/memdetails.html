@@ -46,8 +46,10 @@
 	</header>
     <!-- Form -->
     <main>
+		<article class="highlights">
     	<div class="container" id="firefighter">
 			<section>
+				<h2>Member Certification</h2>
 				<!-- https://stackoverflow.com/questions/45906659/a-complex-condition-inside-v-if/45907070 -->
 				<div class="choose">
 					<select v-model="choose.member">
@@ -55,12 +57,11 @@
 						<option v-for="m in members">{{m.First_Name}} {{m.Last_Name}}</option>
 					</select>
 				</div>
-			</section>
-            <section>
+			
 				<div class="icon"><i class="fas fa-coffee fa-3x"></i></div>
 				<p>
 						
-						<h2>Member Certification</h2>
+						
 						<table>
 		
 							<tbody>
@@ -75,6 +76,7 @@
                 </p>
 			</section>
 		</div>
+		</article>
     </main>
 
 	<!-- Footer -->
