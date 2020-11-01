@@ -73,19 +73,19 @@
 							<a href="certdetails.html" class="btn btn-info" role="button">Certification Details</a>
 		                </div>
 					</section>
-			<section v-if="activeCert">
+			<section>
 				<div class="icon"><i class="fas fa-coffee fa-3x"></i></div>
 				<h2>Certifications and Members</h2>
 				<p>
 					<div class="cert">
                     <form v-on:submit.prevent="handleCertificationEdit()">
 							<div class="form-group">
-								<label for="Name">Certification First name:</label> &nbsp;
+								<label for="Name">Member First name:</label> &nbsp;
 								<input type="text" id="Name" v-model="certDetails.First_Name" readonly>
 								<br>
 							</div>
 							<div class="form-group">
-								<label for="Name">Certification Last Name:</label> &nbsp;
+								<label for="Name">Member Last Name:</label> &nbsp;
 								<input type="text" id="Name" v-model="certDetails.Last_Name" readonly>
 								<br>
 							</div>
