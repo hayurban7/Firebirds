@@ -163,7 +163,7 @@ var app = new Vue({
             console.log("Returned from post:", json);
             // TODO: test a result was returned!
             this.details=json; //Maybe no zero
-            this.newDetails = this.newDetailsData();
+            // this.newDetails = this.newDetailsData();
           });
 
           console.log("Creating (POSTing)...!");
@@ -171,13 +171,13 @@ var app = new Vue({
 
 
         },
-      newDetailsData(){
-          return{
-            Member_ID:"",
-            Certification_ID:"",
-            Exp_Date:""
-          }
-        },
+      // newDetailsData(){
+      //     return{
+      //       Member_ID:"",
+      //       Certification_ID:"",
+      //       Exp_Date:""
+      //     }
+      //   },
       newCertData(){
           return{
             Certificate_Name:"",
