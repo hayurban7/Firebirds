@@ -13,7 +13,7 @@ $db = DbConnection::getConnection();
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
   'INSERT INTO Certification_Details (Member_ID , Certification_ID, Exp_Date)
-  SELECT m.Member_ID, c.Certification_ID FROM Members m, Certifications c WHERE m.Member_ID = Member_ID and c.Certification_ID = Certification_ID'
+  VALUES (?,?,?);'
 );
 
 // might not end up needing all fields (this lists all from member table)
@@ -31,3 +31,4 @@ $pk = $db->lastInsertId();  // https://www.php.net/manual/en/pdo.lastinsertid.ph
 // just in case the data changed by entering it
 header('HTTP/1.1 303 See Other');
 header('Location: ../members/');
+header('Location: ../certifications/');
