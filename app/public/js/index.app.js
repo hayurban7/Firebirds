@@ -214,6 +214,7 @@ var app = new Vue({
 
 
             },
+            
       
       deleteCertification(cid) {
         console.log(cid);
