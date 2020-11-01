@@ -13,8 +13,9 @@ $db = DbConnection::getConnection();
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
   'INSERT INTO Certification_Details (Member_ID , Certification_ID, Exp_Date)
-  VALUES (?, ?, ?)'
+  SELECT m.Member_ID, c.Certification_ID FROM Members m, Certifications c WHERE m.Member_ID = Member_ID and c.Certification_ID = Certification_ID'
 );
+
 // might not end up needing all fields (this lists all from member table)
 $stmt->execute([
   $_POST['Member_ID'],

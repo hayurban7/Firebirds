@@ -149,13 +149,13 @@
 				<h2>Add Member Certifications</h2>
 				<p>
 					<div class="cert">
-                    <form v-on:submit.prevent="handleDetailsEdit()">
+                    <form v-on:submit.prevent="handleDetailsForm()">
 							<div class="form-group">
 								<label for="Name">Member ID:</label> &nbsp;
-                                <input type="form-control" id="id" v-model="certDetails.Member_ID" >
+                                <!-- <input type="form-control" id="id" v-model="certDetails.Member_ID" > -->
                                 <div class="choose">
                                     <select v-model="choose.member">
-                                        <option v-for="m in members">{{m.Member_ID}}</option>
+                                        <option v-for="m in members" >{{m.Member_ID}}</option>
                                     </select>
                                 </div>
 								<br>
@@ -163,10 +163,10 @@
 
 							<div class="form-group">
 								<label for="Name">Certification Name:</label> &nbsp;
-								<input type="form-control" id="Name" v-model="certDetails.Certificate_Name" >
+								<!-- <input type="form-control" id="Name" v-model="certDetails.Certification_ID" > -->
                                 <div class="select">    
                                     <select v-model="select.certification">
-                                        <option v-for="cd in certDetails">{{cd.Certificate_Name}}</option>
+                                        <option v-for="c in cert" >{{c.Certification_ID}}</option>
                                     </select>
                                 </div>
                                 <br>
