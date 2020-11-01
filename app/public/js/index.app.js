@@ -23,6 +23,12 @@ var app = new Vue({
           Certificate_Name:"",
           Exp_period:""
         },
+      details:[],
+      newDetails:{
+          Member_ID:"",
+          Certification_ID:"",
+          Exp_Date:""
+        },
       activeCert:null,
       activeMember:null,
       certMem:[],
@@ -140,7 +146,46 @@ var app = new Vue({
           IsActive:""
         }
       },
-      handleCertificationForm() {
+      handleDetailsForm() {
+
+          // TODO: Validate the data!
+
+
+          fetch('api/members/detailsPost.php', {
+            method:'POST',
+            body: JSON.stringify(this.newDetails),
+            headers: {
+              "Content-Type": "application/json; charset=utf-8"
+            }
+          })
+          .then( response => response.json() )
+          .then( json => {
+            console.log("Returned from post:", json);
+            // TODO: test a result was returned!
+            this.details=json; //Maybe no zero
+            this.newDetails = this.newDetailsData();
+          });
+
+          console.log("Creating (POSTing)...!");
+          console.log(this.newDetails);
+
+
+        },
+      newDetailsData(){
+          return{
+            Member_ID:"",
+            Certification_ID:"",
+            Exp_Date:""
+          }
+        },
+      newCertData(){
+          return{
+            Certificate_Name:"",
+            Exp_period:""
+          }
+        },
+
+        handleCertificationForm() {
 
           // TODO: Validate the data!
 
@@ -214,6 +259,7 @@ var app = new Vue({
 
 
             },
+            
             
       
       deleteCertification(cid) {
