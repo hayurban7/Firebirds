@@ -100,8 +100,7 @@ var app = new Vue({
 
         },
 
-      handleNewMemberForm() {//Member - Madison - post new member form
-        // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
+      handleNewMemberForm() {
 
         // TODO: Validate the data!
 
@@ -116,8 +115,7 @@ var app = new Vue({
         .then( json => {
           console.log("Returned from post:", json);
           this.members=json;
-          // TODO: test a result was returned!
-          // HAYLEYS EDITthis.members=json;
+      
           this.newMember = this.newMemberData();
         });
 
@@ -142,8 +140,7 @@ var app = new Vue({
           IsActive:""
         }
       },
-      handleCertificationForm() {//Certification - Hayley - post new certification form
-          // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
+      handleCertificationForm() {
 
           // TODO: Validate the data!
 
@@ -187,8 +184,7 @@ var app = new Vue({
           .then( json => {
             console.log("Returned from post:", json);
             // TODO: test a result was returned!
-            this.activeCert=json; //Maybe no zero
-            //this.newCert = this.newCertData();
+            this.activeCert=json; 
           });
 
           console.log("Updating (POSTing)...!");
@@ -210,8 +206,7 @@ var app = new Vue({
               .then( json => {
                 console.log("Returned from post:", json);
                 // TODO: test a result was returned!
-                this.activeMember=json; //Maybe no zero
-                //this.newCert = this.newCertData();
+                this.activeMember=json; 
               });
 
               console.log("Updating (POSTing)...!");
@@ -220,7 +215,7 @@ var app = new Vue({
 
             },
       
-      deleteCertification(cid) {//Certification - Hayley - post new certification form
+      deleteCertification(cid) {
         console.log(cid);
         fetch('api/certifications/delete.php', {
           method:'POST',
@@ -231,8 +226,7 @@ var app = new Vue({
           headers: {
             "Content-Type": "application/json; charset=utf-8"
           }
-          // this:cert = this.cert.filter((obj) => {
-          //   return obj.id !== Certification_ID;
+          
         })
         .then( response => response.json() )
         .then( json => {
@@ -257,7 +251,7 @@ var app = new Vue({
       .then( response => response.json() )
       .then( json => {
         console.log("Returned from post:", json);
-        this.members=json; //Maybe no zero
+        this.members=json; 
       });
       console.log("Deleting (POSTing)...!");
     },
