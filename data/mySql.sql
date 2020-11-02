@@ -4,6 +4,8 @@ USE oconeefiredb;
 Drop table if exists Certification_Details;
 Drop table if exists Members;
 Drop table if exists Certifications;
+
+
 CREATE TABLE Members
 
              (Member_ID INT NOT NULL Primary key auto_increment,
@@ -71,11 +73,10 @@ CREATE TABLE Certification_Details
 
               Certification_ID            INT    NOT NULL,
 
-              Exp_Date      DATE,
+              Exp_Date      DATE
+            );
 
-CONSTRAINT CERTIFICATION_DETAILS_FK1 FOREIGN KEY (Member_ID) REFERENCES Members(Member_ID),
 
-CONSTRAINT CERTIFICATION_DETAILS_FK2 FOREIGN KEY (Certification_ID) REFERENCES Certifications(Certification_ID));
 
 INSERT INTO Certification_Details VALUES (1,1,11,'2020-08-01');
 INSERT INTO Certification_Details VALUES (2,1,1,'2021-07-01');

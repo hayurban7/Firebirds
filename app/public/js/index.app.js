@@ -171,13 +171,13 @@ var app = new Vue({
 
 
         },
-      // newDetailsData(){
-      //     return{
-      //       Member_ID:"",
-      //       Certification_ID:"",
-      //       Exp_Date:""
-      //     }
-      //   },
+      newDetailsData(){
+          return{
+            Member_ID:"",
+            Certification_ID:"",
+            Exp_Date:""
+          }
+        },
       newCertData(){
           return{
             Certificate_Name:"",

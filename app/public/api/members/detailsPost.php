@@ -16,6 +16,8 @@ $stmt = $db->prepare(
   VALUES (?,?,?);'
 );
 
+
+
 // might not end up needing all fields (this lists all from member table)
 $stmt->execute([
   $_POST['Member_ID'],

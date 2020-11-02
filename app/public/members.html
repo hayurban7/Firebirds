@@ -153,30 +153,30 @@
 							<div class="form-group">
 								<label for="Name">Member ID:</label> &nbsp;
                                 <!-- <input type="form-control" id="id" v-model="certDetails.Member_ID" > -->
-                                <div class="choose">
-                                    <select v-model="choose.member" class="form-control">
+                                <!-- <div class="choose"> -->
+                                    <select v-model="newDetails.Member_ID" class="form-control">
                                         <option v-for="member in members" v-bind:value="member.Member_ID">{{member.Member_ID}}</option>
                                     </select>
-                                </div>
+                                <!-- </div> -->
 								<br>
 							</div>
 
 							<div class="form-group">
 								<label for="Name">Certification Name:</label> &nbsp;
 								<!-- <input type="form-control" id="Name" v-model="certDetails.Certification_ID" > -->
-                                <div class="select">    
-                                    <select v-model="select.certification" class="form-control">
-                                        <option v-for="c in cert" v-bind:value="c.Certification_ID">{{c.Certification_ID}}</option>
+                                <!-- <div class="select">     -->
+                                    <select v-model="newDetails.Certification_ID" class="form-control">
+                                        <option v-for="c in cert" v-bind:value="c.Certification_ID">{{c.Certificate_Name}}</option>
                                     </select>
-                                </div>
+                                <!-- </div> -->
                                 <br>
 							</div>
 							<div class="form-group">
 								<label for="Year">Expiration Date:</label> &nbsp;
-								<input type="text" id="Date" v-model="certDetails.Exp_Date" >
+								<input type="date" id="Date" v-model="newDetails.Exp_Date" class="form-control">
 								<br>
 							</div>
-							<button type="submit" class="btn btn-primary" v-on:click.prevent ="handleDetailsForm">Save Changes</button>
+							<button type="submit" class="btn btn-primary" >Save Changes</button>
 					</form>
 					</div>
 
