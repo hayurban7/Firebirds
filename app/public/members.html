@@ -155,7 +155,7 @@
                                 <!-- <input type="form-control" id="id" v-model="certDetails.Member_ID" > -->
                                 <div class="choose">
                                     <select v-model="choose.member" class="form-control">
-                                        <option v-for="m in members" v-bind:value="m.Member_ID">{{m.Member_ID}}</option>
+                                        <option v-for="member in members" v-bind:value="m.Member_ID">{{member.Member_ID}}</option>
                                     </select>
                                 </div>
 								<br>
@@ -173,7 +173,7 @@
 							</div>
 							<div class="form-group">
 								<label for="Year">Expiration Date:</label> &nbsp;
-								<input type="date" id="Date" v-model="certDetails.Exp_Date" >
+								<input type="text" id="Date" v-model="certDetails.Exp_Date" >
 								<br>
 							</div>
 							<button type="submit" class="btn btn-primary" v-on:click.prevent ="handleDetailsForm">Save Changes</button>
