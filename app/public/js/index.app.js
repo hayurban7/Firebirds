@@ -163,10 +163,10 @@ var app = new Vue({
             console.log("Returned from post:", json);
             // TODO: test a result was returned!
             this.details=json; //Maybe no zero
-            // this.newDetails = this.newDetailsData();
+            this.newDetails = this.newDetailsData();
           });
 
-          console.log("Creating (POSTing)...!");
+          console.log("Creating Details (POSTing)...!");
           console.log(this.newDetails);
 
 
