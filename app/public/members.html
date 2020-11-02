@@ -154,8 +154,8 @@
 								<label for="Name">Member ID:</label> &nbsp;
                                 <!-- <input type="form-control" id="id" v-model="certDetails.Member_ID" > -->
                                 <div class="choose">
-                                    <select v-model="choose.member">
-                                        <option v-for="m in members" >{{m.Member_ID}}</option>
+                                    <select v-model="choose.member" class="form-control">
+                                        <option v-for="m in members" v-bind:value="m.Member_ID">{{m.Member_ID}}</option>
                                     </select>
                                 </div>
 								<br>
@@ -165,8 +165,8 @@
 								<label for="Name">Certification Name:</label> &nbsp;
 								<!-- <input type="form-control" id="Name" v-model="certDetails.Certification_ID" > -->
                                 <div class="select">    
-                                    <select v-model="select.certification">
-                                        <option v-for="c in cert" >{{c.Certification_ID}}</option>
+                                    <select v-model="select.certification" class="form-control">
+                                        <option v-for="c in cert" v-bind:value="c.Certification_ID">{{c.Certification_ID}}</option>
                                     </select>
                                 </div>
                                 <br>
@@ -176,7 +176,7 @@
 								<input type="date" id="Date" v-model="certDetails.Exp_Date" >
 								<br>
 							</div>
-							<button type="submit" class="btn btn-primary">Save Changes</button>
+							<button type="submit" class="btn btn-primary" v-on:click.prevent ="handleDetailsForm">Save Changes</button>
 					</form>
 					</div>
 
