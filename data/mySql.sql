@@ -4,6 +4,8 @@ USE oconeefiredb;
 Drop table if exists Certification_Details;
 Drop table if exists Members;
 Drop table if exists Certifications;
+SET FOREIGN_KEY_CHECKS = 0;
+
 CREATE TABLE Members
 
              (Member_ID INT NOT NULL Primary key auto_increment,
