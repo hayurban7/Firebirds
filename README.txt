@@ -9,3 +9,5 @@ currently has.
 
 The Certifications page is very similar it has an add certification form and also has an edit button
 next to each of the certificates that makes another form pop up just like on the members page.
+
+On the Member List page you are able to sort the table by any of the headings.
