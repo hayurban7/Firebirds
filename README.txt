@@ -1,5 +1,7 @@
 Welcome to the Firebirds repository!
 
+http://ec2-3-82-248-9.compute-1.amazonaws.com/index.html
+
 The following files are for the website we made for the Oconee Country Fire Rescue
 
 On the Members page you will see two forms, one allows you to add a member and the other lets 
